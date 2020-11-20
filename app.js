@@ -186,11 +186,3 @@ input5.addEventListener("keyup", function(e) {
         }
     }
 })
-
-function correctFun(answer){
-    let text1;
-    text1 = document.createTextNode(answer + " is correct");
-    input1.style.border = "1px solid green";
-    p1.style.color = "green";
-    countCorrect++;    
-}

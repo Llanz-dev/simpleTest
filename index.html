@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="sameDiv div1">
+    <h3>1) 2 + 2 = ?</h3>
+    <input type="number" id="answer1" placeholder="answer">
+    <div id="answerDiv1"></div>
+</div>
+
+<div class="sameDiv div2">
+    <h3>2) 10 x 3 = ?</h3>
+    <input type="number" id="answer2" placeholder="answer">
+    <div id="answerDiv2"></div>
+</div>
+
+<div class="sameDiv div3">
+    <h3>3) 15 - 4 = ?</h3>
+    <input type="number" id="answer3" placeholder="answer">
+    <div id="answerDiv3"></div>
+</div>
+
+<div class="sameDiv div4">
+    <h3>4) 12 / 3 = ?</h3>
+    <input type="number" id="answer4" placeholder="answer">
+    <div id="answerDiv4"></div>
+</div>
+
+<div class="sameDiv div5">
+    <h3>5) 4 % 3 = ?</h3>
+    <input type="number" id="answer5" placeholder="answer">
+    <div id="answerDiv5"></div>
+</div>
+
+<div class="pass-container" id="pass-container">
+    <h2></h2>
+    <div class="pass-message">
+        <p id="question"></p>
+        <button id="buttonOne"></button>
+        <button id="buttonTwo"></button>
+    </div>
+    <div class="resultDiv">
+        <div id="correctDiv" class="countDiv"></div>
+        <div id="mistakeDiv" class="countDiv"></div>
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>

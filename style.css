@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Segoe UI';
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.sameDiv, h1{
+  margin: 1%;
+}
+
+/* Pass message */
+.pass-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(0, 0, 0, .9);
+}
+
+.pass-container h2{
+  font-size: 5rem;
+  color: rgb(0, 255, 0);
+  text-transform: uppercase;
+}
+
+.pass-message p {
+  font-size: 3rem;
+  color: white;
+}
+
+.pass-message button {
+  padding: .5rem;
+  font-size: 2rem;
+  border: 1px solid black;
+  margin: 2% 0;
+  cursor: pointer;
+  transition: .10s;
+}
+
+.pass-message button:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.resultDiv {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 25rem;
+  font-weight: 100;
+}

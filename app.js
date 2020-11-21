@@ -196,6 +196,7 @@ input5.addEventListener("keyup", function(e) {
                 buttonOne.innerText = "Back";
                 buttonTwo.innerText = "Continue";
                 h2.innerHTML = "You passed the test!";  
+                question.innerText = "Do you want to continue?";
             } else {
                 countCorrect = 0;
                 countMistake = 0;
@@ -204,10 +205,10 @@ input5.addEventListener("keyup", function(e) {
                 h2.style.color = "red";
                 h2.innerHTML = "You failed the test";
                 question.innerText = "Do you want to restart?";
-                buttonTwo.addEventListener("click", () => {
-                   
+                buttonTwo.addEventListener("click", () => {                   
                     if(countCorrect < 2){
                         h2.style.color = "rgb(0, 255, 0)";
+                        question.innerText = "Do you want to continue?";
                     }
                     passContainer.style.display = "none";                    
                     other();

@@ -205,7 +205,13 @@ input5.addEventListener("keyup", function(e) {
                 h2.style.color = "red";
                 h2.innerHTML = "You failed the test";
                 question.innerText = "Do you want to restart?";
+                let click = 0;                
                 buttonTwo.addEventListener("click", () => {                   
+                    click++;
+                    if(click > 1){
+                        alert("click: " + click);
+                        buttonTwo.disabled = true;
+                    }    
                     if(countCorrect < 2){
                         h2.style.color = "rgb(0, 255, 0)";
                         question.innerText = "Do you want to continue?";
@@ -224,23 +230,3 @@ input5.addEventListener("keyup", function(e) {
             }
     }
 })
-function other(){
-    answer2.value = "";
-    answer2.style.border = "1px solid black";
-    p2.removeChild(text2);
-    document.getElementById("answerDiv2").removeChild(p2);
-
-    answer3.value = "";
-    answer3.style.border = "1px solid black";
-    p3.removeChild(text3);
-    document.getElementById("answerDiv3").removeChild(p3);
-
-    answer4.value = "";
-    answer4.style.border = "1px solid black";
-    p4.removeChild(text4);
-    document.getElementById("answerDiv4").removeChild(p4);
-
-    answer5.value = "";
-    answer5.style.border = "1px solid black";
-    p5.removeChild(text5);
-}

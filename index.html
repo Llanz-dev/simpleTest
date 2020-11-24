@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+
 <div class="sameDiv div1">
     <h3>1) 2 + 2 = ?</h3>
-    <input type="number" id="answer1" placeholder="answer">
+    <input type="number" id="answer1" placeholder="answer" required>
     <div id="answerDiv1"></div>
 </div>
 
@@ -41,12 +42,22 @@
     <h2></h2>
     <div class="pass-message">
         <p id="question"></p>
-        <button id="buttonOne"></button>
-        <button id="buttonTwo"></button>
+    <div class="buttons">
+        <div>
+            <button id="buttonBack">Back</button>
+        </div>
+        <div>
+            <button id="buttonRetake">Retake</button>
+        </div>
+        <form action="/secondMath.html">            
+            <button id="buttonContinue">Continue</button>
+        </form>
+    </div>
     </div>
     <div class="resultDiv">
         <div id="correctDiv" class="countDiv"></div>
         <div id="mistakeDiv" class="countDiv"></div>
+        <div id="blankDiv"></div>
     </div>
 </div>
     <script src="app.js"></script>

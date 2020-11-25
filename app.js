@@ -94,6 +94,14 @@ function emptyAnswer(userAnswer, answerKey, text, input, p){
     }
 }
 
+// It checks if it's applicable to go on another test
+function stateReview(input){
+    if(state === "start"){
+        input.disabled = false;
+        input.className = "txtCursor";
+    }
+}
+
 // To run all the function of the test
 testLogic();
 
@@ -109,10 +117,7 @@ function testLogic(){
             answerKey = 4;            
             emptyAnswer(userAnswer, answerKey, text1, input1, p1);            
             document.getElementById("answerDiv1").appendChild(p1);            
-            if(state === "start"){                
-                input2.disabled = false;
-                input2.className = "txtCursor";                
-            }            
+            stateReview(input2);
         }
     })
     
@@ -127,10 +132,7 @@ function testLogic(){
             userAnswer = input2.value;        
             answerKey = 30;               
             emptyAnswer(userAnswer, answerKey, text2, input2, p2);
-            if(state === "start"){
-                input3.disabled = false;
-                input3.className = "txtCursor";                
-            }
+            stateReview(input3);
             document.getElementById("answerDiv2").appendChild(p2);
         }
     })
@@ -145,11 +147,8 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input3.value;
             answerKey = 11;            
-            emptyAnswer(userAnswer, answerKey, text3, input3, p3);
-            if(state === "start"){
-                input4.disabled = false;
-                input4.className = "txtCursor";                
-            }
+            emptyAnswer(userAnswer, answerKey, text3, input3, p3);            
+            stateReview(input4);
             document.getElementById("answerDiv3").appendChild(p3);
         }
     })
@@ -165,10 +164,7 @@ function testLogic(){
             userAnswer = input4.value;        
             answerKey = 4;            
             emptyAnswer(userAnswer, answerKey, text4, input4, p4);
-            if(state === "start"){
-                input5.disabled = false;
-                input5.className = "txtCursor";                
-            }
+            stateReview(input5);
             document.getElementById("answerDiv4").appendChild(p4);
         }
     })

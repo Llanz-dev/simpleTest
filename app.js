@@ -1,16 +1,14 @@
-let number, userAnswer, answerKey;
+let number, state, userAnswer, answerKey;
 let click = 0;                
 let countMistake = 0;
 let countCorrect = 0;
 let countNone = 0;
-let state;
 let buttonBack = document.getElementById("buttonBack");
 let buttonRetake = document.getElementById("buttonRetake");
 let buttonContinue = document.getElementById("buttonContinue");
 let question = document.getElementById("question");
 let h2 = document.querySelector("h2");
 let passContainer = document.getElementById("pass-container");
-let allInputs = document.querySelectorAll("input");
 let input1 = document.getElementById("answer1");
 let input2 = document.getElementById("answer2");
 let input3 = document.getElementById("answer3");
@@ -80,21 +78,22 @@ function inputsJudgement(answerUser, keyAnswer, text, input, p){
 }
 
 // Function if the answer is empty
-function emptyAnswer(userAnswer, answerKey, text, input, p){
+function testAnswer(userAnswer, answerKey, text, input, p){
     // Function if the user did not answer the test
     if(input.value == ""){
         input.disabled = false;
-        alert("It must be filled out");
+        // noAnswerDesc.style.display = "block";
         state = "not";        
     }
     // Function if the user did not answer the test
     else {
         inputsJudgement(userAnswer, answerKey, text, input, p);
+        // noAnswerDesc.style.display = "none";
         state = "start";
     }
 }
 
-// It checks if it's applicable to go on another test
+// It checks if it's applicable to go on to another test
 function stateReview(input){
     if(state === "start"){
         input.disabled = false;
@@ -115,7 +114,7 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input1.value;
             answerKey = 4;            
-            emptyAnswer(userAnswer, answerKey, text1, input1, p1);            
+            testAnswer(userAnswer, answerKey, text1, input1, p1);            
             document.getElementById("answerDiv1").appendChild(p1);            
             stateReview(input2);
         }
@@ -131,9 +130,9 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input2.value;        
             answerKey = 30;               
-            emptyAnswer(userAnswer, answerKey, text2, input2, p2);
-            stateReview(input3);
+            testAnswer(userAnswer, answerKey, text2, input2, p2);
             document.getElementById("answerDiv2").appendChild(p2);
+            stateReview(input3);
         }
     })
     
@@ -147,9 +146,9 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input3.value;
             answerKey = 11;            
-            emptyAnswer(userAnswer, answerKey, text3, input3, p3);            
-            stateReview(input4);
+            testAnswer(userAnswer, answerKey, text3, input3, p3);            
             document.getElementById("answerDiv3").appendChild(p3);
+            stateReview(input4);
         }
     })
     
@@ -163,9 +162,9 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input4.value;        
             answerKey = 4;            
-            emptyAnswer(userAnswer, answerKey, text4, input4, p4);
-            stateReview(input5);
+            testAnswer(userAnswer, answerKey, text4, input4, p4);
             document.getElementById("answerDiv4").appendChild(p4);
+            stateReview(input5);
         }
     })
     
@@ -179,7 +178,7 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input5.value;
             answerKey = 1;            
-            emptyAnswer(userAnswer, answerKey, text5, input5, p5);
+            testAnswer(userAnswer, answerKey, text5, input5, p5);
             if(state === "start"){
                 input5.disabled = true;    
                 input5.className = "notCursor";

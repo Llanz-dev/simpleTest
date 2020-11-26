@@ -78,17 +78,17 @@ function inputsJudgement(answerUser, keyAnswer, text, input, p){
 }
 
 // Function if the answer is empty
-function testAnswer(userAnswer, answerKey, text, input, p){
+function testAnswer(userAnswer, answerKey, text, input, p, number){
     // Function if the user did not answer the test
     if(input.value == ""){
-        input.disabled = false;
-        // noAnswerDesc.style.display = "block";
+        input.disabled = false;        
+        document.getElementById("span" + number).innerHTML = "Please filled out your answer";
         state = "not";        
     }
     // Function if the user did not answer the test
     else {
-        inputsJudgement(userAnswer, answerKey, text, input, p);
-        // noAnswerDesc.style.display = "none";
+        inputsJudgement(userAnswer, answerKey, text, input, p, number);
+        document.getElementById("span" + number).remove();
         state = "start";
     }
 }
@@ -114,7 +114,7 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input1.value;
             answerKey = 4;            
-            testAnswer(userAnswer, answerKey, text1, input1, p1);            
+            testAnswer(userAnswer, answerKey, text1, input1, p1, number);            
             document.getElementById("answerDiv1").appendChild(p1);            
             stateReview(input2);
         }
@@ -126,11 +126,11 @@ function testLogic(){
     input2.addEventListener("keyup", function(e) {
         if(e.keyCode === 13){
             e.preventDefault();
-            number = 2;
+            number = "2";
             userAnswer = "answer" + number;
             userAnswer = input2.value;        
             answerKey = 30;               
-            testAnswer(userAnswer, answerKey, text2, input2, p2);
+            testAnswer(userAnswer, answerKey, text2, input2, p2, number);
             document.getElementById("answerDiv2").appendChild(p2);
             stateReview(input3);
         }
@@ -142,11 +142,11 @@ function testLogic(){
     input3.addEventListener("keyup", function(e) {
         if(e.keyCode === 13){
             e.preventDefault();
-            number = 3;
+            number = "3";
             userAnswer = "answer" + number;
             userAnswer = input3.value;
             answerKey = 11;            
-            testAnswer(userAnswer, answerKey, text3, input3, p3);            
+            testAnswer(userAnswer, answerKey, text3, input3, p3, number);            
             document.getElementById("answerDiv3").appendChild(p3);
             stateReview(input4);
         }
@@ -162,7 +162,7 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input4.value;        
             answerKey = 4;            
-            testAnswer(userAnswer, answerKey, text4, input4, p4);
+            testAnswer(userAnswer, answerKey, text4, input4, p4, number);
             document.getElementById("answerDiv4").appendChild(p4);
             stateReview(input5);
         }
@@ -178,7 +178,7 @@ function testLogic(){
             userAnswer = "answer" + number;
             userAnswer = input5.value;
             answerKey = 1;            
-            testAnswer(userAnswer, answerKey, text5, input5, p5);
+            testAnswer(userAnswer, answerKey, text5, input5, p5, number);
             if(state === "start"){
                 input5.disabled = true;    
                 input5.className = "notCursor";

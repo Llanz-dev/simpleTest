@@ -1,0 +1,1 @@
+Basic Math test with rich functionality of Vanilla JavaScript

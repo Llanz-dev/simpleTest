@@ -8,41 +8,48 @@
 </head>
 <body>
 
-<div id="loader" class="loader hidden">
+<!-- Loading screen -->
+<div class="loader" id="loader">
     <img src="loading.gif" alt="loading...">
 </div>
+
+<!-- Number 1 -->
 <div class="sameDiv div1">
     <span id="span1"></span>
-    <h3>1) 2 + 2 = ?</h3>
+    <h3 id="question1">1) 2 + 2 = ?</h3>
     <input type="number" id="answer1" placeholder="answer" required>
     <div id="answerDiv1"></div>
 </div>
 
+<!-- Number 2 -->
 <div class="sameDiv div2">
     <span id="span2"></span>
-    <h3>2) 10 x 3 = ?</h3>
-    <input type="number" id="answer2" placeholder="answer">
+    <h3 id="question2">2) 10 x 3 = ?</h3>
+    <input type="number" id="answer2" placeholder="answer" required>
     <div id="answerDiv2"></div>
 </div>
 
+<!-- Number 3 -->
 <div class="sameDiv div3">
     <span id="span3"></span>
-    <h3>3) 15 - 4 = ?</h3>
-    <input type="number" id="answer3" placeholder="answer">
+    <h3 id="question3">3) 15 - 4 = ?</h3>
+    <input type="number" id="answer3" placeholder="answer" required>
     <div id="answerDiv3"></div>
 </div>
 
+<!-- Number 4 -->
 <div class="sameDiv div4">
     <span id="span4"></span>
-    <h3>4) 12 / 3 = ?</h3>
-    <input type="number" id="answer4" placeholder="answer">
+    <h3 id="question4">4) 12 / 3 = ?</h3>
+    <input type="number" id="answer4" placeholder="answer" required>
     <div id="answerDiv4"></div>
 </div>
 
+<!-- Number 5 -->
 <div class="sameDiv div5">
     <span id="span5"></span>
-    <h3>5) 4 % 3 = ?</h3>
-    <input type="number" id="answer5" placeholder="answer">
+    <h3 id="question5">5) 4 % 3 = ?</h3>
+    <input type="number" id="answer5" placeholder="answer" required>
     <div id="answerDiv5"></div>
 </div>
 
@@ -68,6 +75,8 @@
         <div id="blankDiv"></div>
     </div>
 </div>
-    <script src="app.js"></script>
+
+<script src="app.js"></script>
+
 </body>
 </html>

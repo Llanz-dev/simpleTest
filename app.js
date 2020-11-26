@@ -1,3 +1,4 @@
+const load = document.getElementById("loader");
 let number, state, userAnswer, answerKey;
 let click = 0;                
 let countMistake = 0;
@@ -25,18 +26,26 @@ let text4;
 let p5 = document.createElement("p");
 let text5;
 
+
 window.addEventListener("load", () => {
+    load.className += " hidden";
     passContainer.style.display = "none";    
     buttonBack.addEventListener("click", function() {
         passContainer.style.display = "none";
     })
 })
 
+
+for(let num = 1; num < 6; num++){
+    document.getElementById("question" + num).style.color = "rgb(50, 50, 50)";
+}
+
 // To make the cursor looks good
 function checkCursor(input){
     if(input.disabled = true){
         input.className = "notCursor";
     } else {
+        
         input.className = "txtCursor";
     }
 }
@@ -94,10 +103,11 @@ function testAnswer(userAnswer, answerKey, text, input, p, number){
 }
 
 // It checks if it's applicable to go on to another test
-function stateReview(input){
+function stateReview(input, number){
     if(state === "start"){
         input.disabled = false;
         input.className = "txtCursor";
+        document.getElementById("question" + number).style.color = "rgb(50, 50, 50)";
     }
 }
 
@@ -116,7 +126,7 @@ function testLogic(){
             answerKey = 4;            
             testAnswer(userAnswer, answerKey, text1, input1, p1, number);            
             document.getElementById("answerDiv1").appendChild(p1);            
-            stateReview(input2);
+            stateReview(input2, number);
         }
     })
     
@@ -132,7 +142,7 @@ function testLogic(){
             answerKey = 30;               
             testAnswer(userAnswer, answerKey, text2, input2, p2, number);
             document.getElementById("answerDiv2").appendChild(p2);
-            stateReview(input3);
+            stateReview(input3, number);
         }
     })
     
@@ -148,7 +158,7 @@ function testLogic(){
             answerKey = 11;            
             testAnswer(userAnswer, answerKey, text3, input3, p3, number);            
             document.getElementById("answerDiv3").appendChild(p3);
-            stateReview(input4);
+            stateReview(input4, number);
         }
     })
     
@@ -158,13 +168,13 @@ function testLogic(){
     input4.addEventListener("keyup", function(e) {
         if(e.keyCode === 13){
             e.preventDefault();
-            number = 4;
+            number = "4";
             userAnswer = "answer" + number;
             userAnswer = input4.value;        
             answerKey = 4;            
             testAnswer(userAnswer, answerKey, text4, input4, p4, number);
             document.getElementById("answerDiv4").appendChild(p4);
-            stateReview(input5);
+            stateReview(input5, number);
         }
     })
     
@@ -174,7 +184,7 @@ function testLogic(){
     input5.addEventListener("keyup", function(e) {
         if(e.keyCode === 13){
             e.preventDefault();
-            number = 5;
+            number = "5";
             userAnswer = "answer" + number;
             userAnswer = input5.value;
             answerKey = 1;            
@@ -183,6 +193,7 @@ function testLogic(){
                 input5.disabled = true;    
                 input5.className = "notCursor";
                 document.getElementById("answerDiv5").appendChild(p5);
+                document.getElementById("question5").style.color = "rgb(50, 50, 50)";
                 // After the test
                 const correct = "Number of correct: " + countCorrect;
                 const mistake = "Number of mistake: " + countMistake;

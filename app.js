@@ -27,6 +27,7 @@ let text5;
 
 window.addEventListener("load", () => {
     passContainer.style.display = "none";    
+    document.getElementById("loader").style.display = "none";
     buttonBack.addEventListener("click", function() {
         passContainer.style.display = "none";
     })

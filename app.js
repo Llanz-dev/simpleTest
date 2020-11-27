@@ -26,8 +26,6 @@ let text4;
 let p5 = document.createElement("p");
 let text5;
 
-document.getElementById("question1").style.color = "blue";
-
 window.addEventListener("load", () => {
     load.className += " hidden";
     passContainer.style.display = "none";    

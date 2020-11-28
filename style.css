@@ -34,6 +34,13 @@ body{
   }
 }
 
+/* Stage 1 */
+
+.container-1{
+  margin: 1rem 0;
+  border: 1px solid black;
+}
+
 /* Stage 2 */
 
 /* Chrome, Safari, Edge, Opera */

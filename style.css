@@ -46,23 +46,57 @@ body {
 /* Stage 1 */
 
 .content-1 {
-  background-color: brown;
   margin: 1rem 0;
   position: relative;
 }
 
 .box-1 {
-  margin-left: 4rem;
-  display: flex;
-  flex-direction: column;
-  width: 90%;
+  margin: 0 2rem;
 }
 
 .container-1 {
   margin: 1rem 0;
 }
 
+input[type="radio"] {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+
 /* Stage 2 */
+
+.stage-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  width: 50%;
+  border: 1px solid black;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .stage-2 {
+    margin: 2rem 0;
+    height: 70vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+    align-items: none;
+    width: 100%;
+  }
+  .container-2 {
+    border: 1px solid black;
+  }
+}
+
+.stage-2-div {
+  margin: 0 1rem;
+}
+
+.sameDiv {
+  margin: 1rem;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

@@ -10,6 +10,7 @@ let buttonContinue = document.getElementById("buttonContinue");
 let question = document.getElementById("question");
 let h2 = document.querySelector("h2");
 let passContainer = document.getElementById("pass-container");
+// 1 to 5
 let input1 = document.getElementById("answer1");
 let input2 = document.getElementById("answer2");
 let input3 = document.getElementById("answer3");
@@ -25,6 +26,39 @@ let p4 = document.createElement("p");
 let text4;
 let p5 = document.createElement("p");
 let text5;
+// 6 to 10
+let input6 = document.getElementById("answer6");
+let input7 = document.getElementById("answer7");
+let input8 = document.getElementById("answer8");
+let input9 = document.getElementById("answer9");
+let input10 = document.getElementById("answer10");
+let p6 = document.createElement("p");
+let text6;
+let p7 = document.createElement("p");
+let text7;
+let p8 = document.createElement("p");
+let text8;
+let p9 = document.createElement("p");
+let text9;
+let p10 = document.createElement("p");
+let text10;
+// 11 to 15
+let input11 = document.getElementById("answer11");
+let input12 = document.getElementById("answer12");
+let input13 = document.getElementById("answer13");
+let input14 = document.getElementById("answer14");
+let input15 = document.getElementById("answer15");
+let p11 = document.createElement("p");
+let text11;
+let p12 = document.createElement("p");
+let text12;
+let p13 = document.createElement("p");
+let text13;
+let p14 = document.createElement("p");
+let text14;
+let p15 = document.createElement("p");
+let text15;
+
 
 window.addEventListener("load", () => {
   load.className += " hidden";
@@ -184,11 +218,171 @@ function testLogic() {
       userAnswer = input5.value;
       answerKey = 1;
       testAnswer(userAnswer, answerKey, text5, input5, p5, number);
-      if (state === "start") {
-        input5.disabled = true;
-        input5.className = "notCursor";
-        document.getElementById("answerDiv5").appendChild(p5);
-        // document.getElementById("question5").style.color = "rgb(50, 50, 50)";
+      document.getElementById("answerDiv5").appendChild(p5);
+      stateReview(input6, number);
+    }
+  });
+
+  // number 6 logic flow
+  input6.disabled = true;
+  input6.className = "notCursor";
+  input6.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "6";
+      userAnswer = "answer" + number;
+      userAnswer = input6.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text6, input6, p6, number);
+      document.getElementById("answerDiv6").appendChild(p6);
+      stateReview(input7, number);
+    }
+  });
+
+  // number 7 logic flow
+  input7.disabled = true;
+  input7.className = "notCursor";
+  input7.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "7";
+      userAnswer = "answer" + number;
+      userAnswer = input7.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text7, input7, p7, number);
+      document.getElementById("answerDiv7").appendChild(p7);
+      stateReview(input8, number);
+    }
+  });
+
+  // number 8 logic flow
+  input8.disabled = true;
+  input8.className = "notCursor";
+  input8.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "8";
+      userAnswer = "answer" + number;
+      userAnswer = input8.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text8, input8, p8, number);
+      document.getElementById("answerDiv8").appendChild(p8);
+      stateReview(input9, number);
+    }
+  });
+
+  // number 9 logic flow
+  input9.disabled = true;
+  input9.className = "notCursor";
+  input9.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "9";
+      userAnswer = "answer" + number;
+      userAnswer = input9.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text9, input9, p9, number);
+      document.getElementById("answerDiv9").appendChild(p9);
+      stateReview(input10, number);
+    }
+  });
+
+  // number 10 logic flow
+  input10.disabled = true;
+  input10.className = "notCursor";
+  input10.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "10";
+      userAnswer = "answer" + number;
+      userAnswer = input10.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text10, input10, p10, number);
+      document.getElementById("answerDiv10").appendChild(p10);
+      stateReview(input11, number);
+    }
+  });
+
+  // number 11 logic flow
+  input11.disabled = true;
+  input11.className = "notCursor";
+  input11.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "11";
+      userAnswer = "answer" + number;
+      userAnswer = input11.value;
+      answerKey = 4;
+      testAnswer(userAnswer, answerKey, text11, input11, p11, number);
+      document.getElementById("answerDiv11").appendChild(p11);
+      stateReview(input12, number);
+    }
+  });
+
+  // number 12 logic flow
+  input12.disabled = true;
+  input12.className = "notCursor";
+  input12.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "12";
+      userAnswer = "answer" + number;
+      userAnswer = input12.value;
+      answerKey = 30;
+      testAnswer(userAnswer, answerKey, text12, input12, p12, number);
+      document.getElementById("answerDiv12").appendChild(p12);
+      stateReview(input13, number);
+    }
+  });
+
+  // number 13 logic flow
+  input13.disabled = true;
+  input13.className = "notCursor";
+  input13.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "13";
+      userAnswer = "answer" + number;
+      userAnswer = input13.value;
+      answerKey = 11;
+      testAnswer(userAnswer, answerKey, text13, input13, p13, number);
+      document.getElementById("answerDiv13").appendChild(p13);
+      stateReview(input14, number);
+    }
+  });
+
+  // number 14 logic flow
+  input14.disabled = true;
+  input14.className = "notCursor";
+  input14.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "14";
+      userAnswer = "answer" + number;
+      userAnswer = input14.value;
+      answerKey = 4;
+      testAnswer(userAnswer, answerKey, text14, input14, p14, number);
+      document.getElementById("answerDiv14").appendChild(p14);
+      stateReview(input15, number);
+    }
+  });
+
+  // number 15 logic flow
+  input15.disabled = true;
+  input15.className = "notCursor";
+  input15.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      number = "15";
+      userAnswer = "answer" + number;
+      userAnswer = input15.value;
+      answerKey = 1;
+      testAnswer(userAnswer, answerKey, text15, input15, p15, number);
+      document.getElementById("answerDiv15").appendChild(p15);      
+    if (state === "start") {
+        input15.disabled = true;
+        input15.className = "notCursor";
+        document.getElementById("answerDiv15").appendChild(p15);
         // After the test
         const correct = "Number of correct: " + countCorrect;
         const mistake = "Number of mistake: " + countMistake;
@@ -220,5 +414,5 @@ function testLogic() {
         }
       }
     }
-  });
-}
+    });
+  }    

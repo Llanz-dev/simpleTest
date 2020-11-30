@@ -63,8 +63,20 @@ input[type="radio"] {
   margin-left: 1.5rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .container-1 h3 {
+    font-size: 16px;
+  }
+  .container-1 p {
+    font-size: 14px;
+  }
+}
+
 /* Stage 2 */
 
+.stage-2-div {
+  height: 100vh;
+}
 .stage-2 {
   display: flex;
   flex-direction: column;

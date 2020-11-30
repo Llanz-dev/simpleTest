@@ -1,4 +1,6 @@
 const load = document.getElementById("loader");
+// Stage 1
+// Stage 2
 let number, state, userAnswer, answerKey;
 let click = 0;
 let countMistake = 0;
@@ -59,6 +61,7 @@ let text14;
 let p15 = document.createElement("p");
 let text15;
 
+// Loading screen
 
 window.addEventListener("load", () => {
   load.className += " hidden";
@@ -67,6 +70,16 @@ window.addEventListener("load", () => {
     passContainer.style.display = "none";
   });
 });
+
+function testIt(browser){
+  document.getElementById("result").value = browser;
+  if(browser == 'Opera'){
+    console.log("correct");
+  } else {
+    console.log('wrong');
+  }
+}
+
 
 // To make the cursor looks good
 function checkCursor(input) {

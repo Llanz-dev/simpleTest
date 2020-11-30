@@ -63,13 +63,9 @@ input[type="radio"] {
   margin-left: 1.5rem;
 }
 
-@media only screen and (max-width: 800px) {
-  .container-1 h3 {
-    font-size: 16px;
-  }
-  .container-1 p {
-    font-size: 14px;
-  }
+input[type="submit"] {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 /* Stage 2 */
@@ -92,26 +88,6 @@ h3 {
 
 span {
   font-style: oblique;
-}
-
-@media only screen and (min-width: 1000px) {
-  .stage-2 {
-    margin: 2rem 0;
-    height: 70vh;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    border: none;
-    align-items: none;
-    width: 100%;
-  }
-  .container-2 {
-    border: 1px solid black;
-  }
-}
-
-.stage-2-div {
-  margin: 0 1rem;
 }
 
 .sameDiv {
@@ -213,4 +189,38 @@ input[type="number"]:focus {
   color: white;
   width: 28rem;
   font-weight: 100;
+}
+
+@media only screen and (max-width: 800px) {
+  .container-1 h3 {
+    font-size: 16px;
+  }
+  .container-1 p {
+    font-size: 14px;
+  }
+  .container-2 h3 {
+    font-size: 1.1em;
+  }
+  input[type="number"] {
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .stage-2 {
+    margin: 2rem 0;
+    height: 70vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+    align-items: none;
+    width: 100%;
+  }
+  .container-2 {
+    border: 1px solid black;
+  }
 }

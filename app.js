@@ -1,6 +1,4 @@
 const load = document.getElementById("loader");
-// Stage 1
-// Stage 2
 let number, state, userAnswer, answerKey;
 let click = 0;
 let countMistake = 0;
@@ -71,15 +69,75 @@ window.addEventListener("load", () => {
   });
 });
 
-function testIt(browser){
-  document.getElementById("result").value = browser;
-  if(browser == 'Opera'){
-    console.log("correct");
+// Stage 1
+
+function checkAnswer(questAnswer, answerKey){
+  if(questAnswer == answerKey){
+    countCorrect++;
   } else {
-    console.log('wrong');
+    countMistake++;
   }
 }
 
+// Answer database
+
+function questAnswer(){
+    let questAnswer1 = document.quiz.question1.value;
+    answerKey = "C";
+    checkAnswer(questAnswer1, answerKey);
+    let questAnswer2 = document.quiz.question2.value;
+    answerKey = "A";
+    checkAnswer(questAnswer2, answerKey);  
+    let questAnswer3 = document.quiz.question3.value;
+    answerKey = "D";
+    checkAnswer(questAnswer3, answerKey);
+    let questAnswer4 = document.quiz.question4.value;
+    answerKey = "A"
+    checkAnswer(questAnswer4, answerKey);
+    let questAnswer5 = document.quiz.question5.value;
+    answerKey = "D";
+    checkAnswer(questAnswer5, answerKey);
+    let questAnswer6 = document.quiz.question6.value;
+    answerKey = "B";
+    checkAnswer(questAnswer6, answerKey);
+
+    let questAnswer7 = document.quiz.question7.value;
+    answerKey = "C";
+    checkAnswer(questAnswer7, answerKey);
+    let questAnswer8 = document.quiz.question8.value;
+    answerKey = "A";
+    checkAnswer(questAnswer8, answerKey);  
+    let questAnswer9 = document.quiz.question9.value;
+    answerKey = "B";
+    checkAnswer(questAnswer9, answerKey);
+    let questAnswer10 = document.quiz.question10.value;
+    answerKey = "D"
+    checkAnswer(questAnswer10, answerKey);
+    let questAnswer11 = document.quiz.question11.value;
+    answerKey = "C";
+    checkAnswer(questAnswer11, answerKey);
+    let questAnswer12 = document.quiz.question12.value;
+    answerKey = "A";
+    checkAnswer(questAnswer12, answerKey);
+    let questAnswer13 = document.quiz.question13.value;
+    answerKey = "A";
+    checkAnswer(questAnswer13, answerKey);
+    let questAnswer14 = document.quiz.question14.value;
+    answerKey = "B"
+    checkAnswer(questAnswer14, answerKey);
+    let questAnswer15 = document.quiz.question15.value;
+    answerKey = "D";
+    checkAnswer(questAnswer15, answerKey);
+}
+
+document.getElementById("submit").addEventListener("click", (e) => {
+    e.preventDefault();
+    questAnswer();
+    console.log("Right " + countCorrect);
+    console.log("Wrong " + countMistake);
+});
+
+// Stage 2
 
 // To make the cursor looks good
 function checkCursor(input) {

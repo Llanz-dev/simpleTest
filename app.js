@@ -76,6 +76,14 @@ function checkAnswer(questAnswer, answerKey){
     countCorrect++;
   } else {
     countMistake++;
+  } 
+}
+
+function emptyAnswer(questAnswer, answerKey, number){
+  if(questAnswer == ""){
+    console.log("questAnswer" + number + " has no answer");
+  } else {
+    checkAnswer(questAnswer, answerKey);
   }
 }
 
@@ -83,55 +91,71 @@ function checkAnswer(questAnswer, answerKey){
 
 function questAnswer(){
     let questAnswer1 = document.quiz.question1.value;
+    number = 1;
     answerKey = "C";
-    checkAnswer(questAnswer1, answerKey);
+    emptyAnswer(questAnswer1, answerKey, number);
     let questAnswer2 = document.quiz.question2.value;
+    number = 2;
     answerKey = "A";
-    checkAnswer(questAnswer2, answerKey);  
+    emptyAnswer(questAnswer2, answerKey, number);  
     let questAnswer3 = document.quiz.question3.value;
+    number = 3;
     answerKey = "D";
-    checkAnswer(questAnswer3, answerKey);
+    emptyAnswer(questAnswer3, answerKey, number);
     let questAnswer4 = document.quiz.question4.value;
+    number = 4;
     answerKey = "A"
-    checkAnswer(questAnswer4, answerKey);
+    emptyAnswer(questAnswer4, answerKey, number);
     let questAnswer5 = document.quiz.question5.value;
+    number = 5;
     answerKey = "D";
-    checkAnswer(questAnswer5, answerKey);
+    emptyAnswer(questAnswer5, answerKey, number);
     let questAnswer6 = document.quiz.question6.value;
+    number = 6;
     answerKey = "B";
-    checkAnswer(questAnswer6, answerKey);
-
+    emptyAnswer(questAnswer6, answerKey, number);
     let questAnswer7 = document.quiz.question7.value;
+    number = 7;
     answerKey = "C";
-    checkAnswer(questAnswer7, answerKey);
+    emptyAnswer(questAnswer7, answerKey, number);
     let questAnswer8 = document.quiz.question8.value;
+    number = 8;
     answerKey = "A";
-    checkAnswer(questAnswer8, answerKey);  
+    emptyAnswer(questAnswer8, answerKey, number);  
     let questAnswer9 = document.quiz.question9.value;
+    number = 9;
     answerKey = "B";
-    checkAnswer(questAnswer9, answerKey);
+    emptyAnswer(questAnswer9, answerKey, number);
     let questAnswer10 = document.quiz.question10.value;
+    number = 10;
     answerKey = "D"
-    checkAnswer(questAnswer10, answerKey);
+    emptyAnswer(questAnswer10, answerKey, number);
     let questAnswer11 = document.quiz.question11.value;
+    number = 11;
     answerKey = "C";
-    checkAnswer(questAnswer11, answerKey);
+    emptyAnswer(questAnswer11, answerKey, number);
     let questAnswer12 = document.quiz.question12.value;
+    number = 12;
     answerKey = "A";
-    checkAnswer(questAnswer12, answerKey);
+    emptyAnswer(questAnswer12, answerKey, number);
     let questAnswer13 = document.quiz.question13.value;
+    number = 13;
     answerKey = "A";
-    checkAnswer(questAnswer13, answerKey);
+    emptyAnswer(questAnswer13, answerKey, number);
     let questAnswer14 = document.quiz.question14.value;
+    number = 14;
     answerKey = "B"
-    checkAnswer(questAnswer14, answerKey);
+    emptyAnswer(questAnswer14, answerKey, number);
     let questAnswer15 = document.quiz.question15.value;
+    number = 15;
     answerKey = "D";
-    checkAnswer(questAnswer15, answerKey);
+    emptyAnswer(questAnswer15, answerKey, number);
 }
-
-document.getElementById("submit").addEventListener("click", (e) => {
+const submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", (e) => {
     e.preventDefault();
+    submitButton.disabled = true;
+    submitButton.style.cursor = "not-allowed";
     questAnswer();
     console.log("Right " + countCorrect);
     console.log("Wrong " + countMistake);
@@ -217,6 +241,8 @@ testLogic();
 // All the test logic functions
 function testLogic() {
   // number 1 logic flow
+  input1.disabled = true;
+  input1.classList = "notCursor";
   input1.addEventListener("keyup", function (e) {
     if (e.keyCode === 13) {
       e.preventDefault();

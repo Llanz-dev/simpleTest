@@ -59,7 +59,7 @@ let p14 = document.createElement("p");
 let text14;
 let p15 = document.createElement("p");
 let text15;
-let p;
+
 // Loading screen
 
 window.addEventListener("load", () => {
@@ -83,92 +83,95 @@ function checkAnswer(questAnswer, answerKey){
 
 function answerCheck(questAnswer, answerKey, number){
   if(questAnswer == ""){
-    // document.getElementById("emptyMessage" + number).innerText = "hey";
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
-    p = document.createElement("p");
-    let text = document.createTextNode("no answer");
-    p.appendChild(text);
-    document.getElementById("emptyMessage1").appendChild(p);
-    // console.log("emptyMessage" + number + " has no answer");   
+    document.getElementById("emptyMessage" + number).innerText = "No answer";
   } else {
     checkAnswer(questAnswer, answerKey);
   }
 }
 
 // Answer database
+   const cell = document.querySelectorAll("[radio]");
+    cell.forEach(cell => {
+      cell.addEventListener("click", function() {
+        document.getElementById("emptyMessage1").remove();
+      })
+    })
 
 function questAnswer(){
     let questAnswer1 = document.quiz.question1.value;
-    number = "1";
+    number = 1;
     answerKey = "C";
     answerCheck(questAnswer1, answerKey, number);
     let questAnswer2 = document.quiz.question2.value;
     number = 2;
     answerKey = "A";
     answerCheck(questAnswer2, answerKey, number);  
-    let questAnswer3 = document.quiz.question3.value;
-    number = 3;
-    answerKey = "D";
-    answerCheck(questAnswer3, answerKey, number);
-    let questAnswer4 = document.quiz.question4.value;
-    number = 4;
-    answerKey = "A"
-    answerCheck(questAnswer4, answerKey, number);
-    let questAnswer5 = document.quiz.question5.value;
-    number = 5;
-    answerKey = "D";
-    answerCheck(questAnswer5, answerKey, number);
-    let questAnswer6 = document.quiz.question6.value;
-    number = 6;
-    answerKey = "B";
-    answerCheck(questAnswer6, answerKey, number);
-    let questAnswer7 = document.quiz.question7.value;
-    number = 7;
-    answerKey = "C";
-    answerCheck(questAnswer7, answerKey, number);
-    let questAnswer8 = document.quiz.question8.value;
-    number = 8;
-    answerKey = "A";
-    answerCheck(questAnswer8, answerKey, number);  
-    let questAnswer9 = document.quiz.question9.value;
-    number = 9;
-    answerKey = "B";
-    answerCheck(questAnswer9, answerKey, number);
-    let questAnswer10 = document.quiz.question10.value;
-    number = 10;
-    answerKey = "D"
-    answerCheck(questAnswer10, answerKey, number);
-    let questAnswer11 = document.quiz.question11.value;
-    number = 11;
-    answerKey = "C";
-    answerCheck(questAnswer11, answerKey, number);
-    let questAnswer12 = document.quiz.question12.value;
-    number = 12;
-    answerKey = "A";
-    answerCheck(questAnswer12, answerKey, number);
-    let questAnswer13 = document.quiz.question13.value;
-    number = 13;
-    answerKey = "A";
-    answerCheck(questAnswer13, answerKey, number);
-    let questAnswer14 = document.quiz.question14.value;
-    number = 14;
-    answerKey = "B"
-    answerCheck(questAnswer14, answerKey, number);
-    let questAnswer15 = document.quiz.question15.value;
-    number = 15;
-    answerKey = "D";
-    answerCheck(questAnswer15, answerKey, number);
-    const totalAnswers = countMistake + countCorrect;
-    console.log(countCorrect + countMistake);
-    if(totalAnswers === 15){
-      console.log("it's " + totalAnswers);
-      submitButton.disabled = false;
-      submitButton.style.cursor = "pointer";
-    } else {
-      console.log(totalAnswers + " is not enough");
-    }
+    // let questAnswer3 = document.quiz.question3.value;
+    // number = 3;
+    // answerKey = "D";
+    // answerCheck(questAnswer3, answerKey, number);
+    // let questAnswer4 = document.quiz.question4.value;
+    // number = 4;
+    // answerKey = "A"
+    // answerCheck(questAnswer4, answerKey, number);
+    // let questAnswer5 = document.quiz.question5.value;
+    // number = 5;
+    // answerKey = "D";
+    // answerCheck(questAnswer5, answerKey, number);
+    // let questAnswer6 = document.quiz.question6.value;
+    // number = 6;
+    // answerKey = "B";
+    // answerCheck(questAnswer6, answerKey, number);
+    // let questAnswer7 = document.quiz.question7.value;
+    // number = 7;
+    // answerKey = "C";
+    // answerCheck(questAnswer7, answerKey, number);
+    // let questAnswer8 = document.quiz.question8.value;
+    // number = 8;
+    // answerKey = "A";
+    // answerCheck(questAnswer8, answerKey, number);  
+    // let questAnswer9 = document.quiz.question9.value;
+    // number = 9;
+    // answerKey = "B";
+    // answerCheck(questAnswer9, answerKey, number);
+    // let questAnswer10 = document.quiz.question10.value;
+    // number = 10;
+    // answerKey = "D"
+    // answerCheck(questAnswer10, answerKey, number);
+    // let questAnswer11 = document.quiz.question11.value;
+    // number = 11;
+    // answerKey = "C";
+    // answerCheck(questAnswer11, answerKey, number);
+    // let questAnswer12 = document.quiz.question12.value;
+    // number = 12;
+    // answerKey = "A";
+    // answerCheck(questAnswer12, answerKey, number);
+    // let questAnswer13 = document.quiz.question13.value;
+    // number = 13;
+    // answerKey = "A";
+    // answerCheck(questAnswer13, answerKey, number);
+    // let questAnswer14 = document.quiz.question14.value;
+    // number = 14;
+    // answerKey = "B"
+    // answerCheck(questAnswer14, answerKey, number);
+    // let questAnswer15 = document.quiz.question15.value;
+    // number = 15;
+    // answerKey = "D";
+    // answerCheck(questAnswer15, answerKey, number);
+    // const totalAnswers = countMistake + countCorrect;
+    // console.log(countCorrect + countMistake);
+    // if(totalAnswers === 15){
+    //   console.log("it's " + totalAnswers);
+    //   submitButton.disabled = false;
+    //   submitButton.style.cursor = "pointer";
+    // } else {
+    //   console.log(totalAnswers + " is not enough");
+    // }
 }
+
+
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     submitButton.disabled = true;

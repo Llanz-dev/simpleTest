@@ -1,6 +1,7 @@
 const load = document.getElementById("loader");
 let number, state, userAnswer, answerKey;
 let click = 0;
+let count = 0;
 let countMistake = 0;
 let countCorrect = 0;
 let countNone = 0;
@@ -58,7 +59,7 @@ let p14 = document.createElement("p");
 let text14;
 let p15 = document.createElement("p");
 let text15;
-
+let p;
 // Loading screen
 
 window.addEventListener("load", () => {
@@ -70,6 +71,7 @@ window.addEventListener("load", () => {
 });
 
 // Stage 1
+const submitButton = document.getElementById("submit");
 
 function checkAnswer(questAnswer, answerKey){
   if(questAnswer == answerKey){
@@ -79,9 +81,16 @@ function checkAnswer(questAnswer, answerKey){
   } 
 }
 
-function emptyAnswer(questAnswer, answerKey, number){
+function answerCheck(questAnswer, answerKey, number){
   if(questAnswer == ""){
-    console.log("questAnswer" + number + " has no answer");
+    // document.getElementById("emptyMessage" + number).innerText = "hey";
+    submitButton.disabled = false;
+    submitButton.style.cursor = "pointer";
+    p = document.createElement("p");
+    let text = document.createTextNode("no answer");
+    p.appendChild(text);
+    document.getElementById("emptyMessage1").appendChild(p);
+    // console.log("emptyMessage" + number + " has no answer");   
   } else {
     checkAnswer(questAnswer, answerKey);
   }
@@ -91,74 +100,82 @@ function emptyAnswer(questAnswer, answerKey, number){
 
 function questAnswer(){
     let questAnswer1 = document.quiz.question1.value;
-    number = 1;
+    number = "1";
     answerKey = "C";
-    emptyAnswer(questAnswer1, answerKey, number);
+    answerCheck(questAnswer1, answerKey, number);
     let questAnswer2 = document.quiz.question2.value;
     number = 2;
     answerKey = "A";
-    emptyAnswer(questAnswer2, answerKey, number);  
+    answerCheck(questAnswer2, answerKey, number);  
     let questAnswer3 = document.quiz.question3.value;
     number = 3;
     answerKey = "D";
-    emptyAnswer(questAnswer3, answerKey, number);
+    answerCheck(questAnswer3, answerKey, number);
     let questAnswer4 = document.quiz.question4.value;
     number = 4;
     answerKey = "A"
-    emptyAnswer(questAnswer4, answerKey, number);
+    answerCheck(questAnswer4, answerKey, number);
     let questAnswer5 = document.quiz.question5.value;
     number = 5;
     answerKey = "D";
-    emptyAnswer(questAnswer5, answerKey, number);
+    answerCheck(questAnswer5, answerKey, number);
     let questAnswer6 = document.quiz.question6.value;
     number = 6;
     answerKey = "B";
-    emptyAnswer(questAnswer6, answerKey, number);
+    answerCheck(questAnswer6, answerKey, number);
     let questAnswer7 = document.quiz.question7.value;
     number = 7;
     answerKey = "C";
-    emptyAnswer(questAnswer7, answerKey, number);
+    answerCheck(questAnswer7, answerKey, number);
     let questAnswer8 = document.quiz.question8.value;
     number = 8;
     answerKey = "A";
-    emptyAnswer(questAnswer8, answerKey, number);  
+    answerCheck(questAnswer8, answerKey, number);  
     let questAnswer9 = document.quiz.question9.value;
     number = 9;
     answerKey = "B";
-    emptyAnswer(questAnswer9, answerKey, number);
+    answerCheck(questAnswer9, answerKey, number);
     let questAnswer10 = document.quiz.question10.value;
     number = 10;
     answerKey = "D"
-    emptyAnswer(questAnswer10, answerKey, number);
+    answerCheck(questAnswer10, answerKey, number);
     let questAnswer11 = document.quiz.question11.value;
     number = 11;
     answerKey = "C";
-    emptyAnswer(questAnswer11, answerKey, number);
+    answerCheck(questAnswer11, answerKey, number);
     let questAnswer12 = document.quiz.question12.value;
     number = 12;
     answerKey = "A";
-    emptyAnswer(questAnswer12, answerKey, number);
+    answerCheck(questAnswer12, answerKey, number);
     let questAnswer13 = document.quiz.question13.value;
     number = 13;
     answerKey = "A";
-    emptyAnswer(questAnswer13, answerKey, number);
+    answerCheck(questAnswer13, answerKey, number);
     let questAnswer14 = document.quiz.question14.value;
     number = 14;
     answerKey = "B"
-    emptyAnswer(questAnswer14, answerKey, number);
+    answerCheck(questAnswer14, answerKey, number);
     let questAnswer15 = document.quiz.question15.value;
     number = 15;
     answerKey = "D";
-    emptyAnswer(questAnswer15, answerKey, number);
+    answerCheck(questAnswer15, answerKey, number);
+    const totalAnswers = countMistake + countCorrect;
+    console.log(countCorrect + countMistake);
+    if(totalAnswers === 15){
+      console.log("it's " + totalAnswers);
+      submitButton.disabled = false;
+      submitButton.style.cursor = "pointer";
+    } else {
+      console.log(totalAnswers + " is not enough");
+    }
 }
-const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     submitButton.disabled = true;
     submitButton.style.cursor = "not-allowed";
     questAnswer();
     console.log("Right " + countCorrect);
-    console.log("Wrong " + countMistake);
+    console.log("Wrong " + countMistake);    
 });
 
 // Stage 2

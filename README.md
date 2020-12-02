@@ -1,6 +1,9 @@
-Basic Math test with rich functionality of Vanilla JavaScript
+Basic Math test with simple functionality of Vanilla JavaScript
 
-Answer key
+Many bugs.
+Still working...
+
+Answer key:
 1 C
 2 A
 3 D

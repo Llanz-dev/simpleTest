@@ -1,4 +1,4 @@
-Basic Math test with simple functionality of Vanilla JavaScript
+Basic Math test with simple functionality of JavaScript
 
 Many bugs.
 Still working...

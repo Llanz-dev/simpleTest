@@ -75,7 +75,7 @@ const submitButton = document.getElementById("submit");
 // This all gets the input radio
 document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   cell.addEventListener("click", () => {
-    document.getElementById("emptyMessage" + number).remove();
+    document.getElementById("emptyMessage" + number).style.display = "none";
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
   });
@@ -83,31 +83,13 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
 
 // This function checks the answer if it's right or wrong
 function checkAnswer(questAnswer, answerKey) {
-  if (questAnswer == answerKey) {
-    // document.getElementById("questionNumber" + number).style.color = "green";
-    // if(set == "yow"){
-      document.getElementById("emptyMessage" + number).textContent = answerKey + " is CORRECT";
-    // }
-    // document.getElementById("emptyMessage" + number).style.color = "green";
-    // if(set == "no"){
-    //   const createSpan = document.createElement("span");
-    //   const spanMessage = document.createTextNode(answerKey + " is CORRECT");
-    //   createSpan.appendChild(spanMessage);
-    //   document.getElementById("message15").appendChild(createSpan);
-    // }
+  if (questAnswer == answerKey) {    
+    document.getElementById("emptyMessage" + number).textContent = answerKey + " is CORRECT";
+    document.getElementById("emptyMessage" + number).style.color = "green";
     countCorrect++;
   } else {
-    // document.getElementById("questionNumber" + number).style.color = "red";
-    // if(set == "yow"){
-      document.getElementById("emptyMessage" + number).textContent = questAnswer + " is WRONG";
-    // }
-    // document.getElementById("emptyMessage" + number).style.color = "red";
-    // if(set == "no"){
-    //   const createSpan = document.createElement("span");
-    //   const spanMessage = document.createTextNode(answerKey + " is CORRECT");
-    //   createSpan.appendChild(spanMessage);
-    //   document.getElementById("message15").appendChild(createSpan);
-    // }
+    document.getElementById("emptyMessage" + number).textContent = questAnswer + " is WRONG";
+    document.getElementById("emptyMessage" + number).style.color = "red";
     countMistake++;
   }
 }
@@ -115,6 +97,8 @@ function checkAnswer(questAnswer, answerKey) {
 // It checks the answer wether the user answer the questions or not
 function answerCheck(questAnswer, answerKey, number) {
   if (questAnswer == "") {
+    countCorrect = 0;
+    countMistake = 0;
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
     document.getElementById("emptyMessage" + number).innerText =
@@ -124,8 +108,6 @@ function answerCheck(questAnswer, answerKey, number) {
     if (count > 0) {
       submitButton.disabled = true;
       submitButton.style.cursor = "not-allowed";
-      countCorrect = 0;
-      countMistake = 0;
     } else {
       submitButton.disabled = false;
       submitButton.style.cursor = "pointer";
@@ -134,12 +116,10 @@ function answerCheck(questAnswer, answerKey, number) {
     // This removes the message if the user finally answer the specific question
     document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
       cell.addEventListener("click", () => {
-        document.getElementById("emptyMessage" + number).remove();
         countClick++;
 
         // This will declare to disabled or not if the user answer all the questions
         if (countClick === 15) {
-          set = "yes";
           submitButton.disabled = false;
           submitButton.style.cursor = "pointer";
           submitButton.addEventListener("click", () => {
@@ -147,15 +127,22 @@ function answerCheck(questAnswer, answerKey, number) {
             submitButton.style.cursor = "not-allowed";
             console.log("Right " + countCorrect);
             console.log("Wrong " + countMistake);
+            if(countCorrect > 9){
+              console.log("You passed");
+            } else {
+              console.log("You failed");
+            }
           });
+        } else if (countClick > 0) {
+          document.getElementById("emptyMessage" + number).style.display = "block";
+        }else {
+          document.getElementById("emptyMessage" + number).style.display = "none";
         }
       });
     });
   } else {
     checkAnswer(questAnswer, answerKey, number);
     countClick++;
-        set = "yow";
-
   }
 }
 
@@ -228,11 +215,11 @@ function questAnswer() {
     submitButton.style.cursor = "not-allowed";
     console.log("Correct " + countCorrect);
     console.log("Wrong " + countMistake);
-  }
-
-  // This alert will pop up on how many questions the user did not answered
-  if (set == "no") {
-    alert("Answer the " + count + " remaining questions");
+      if(countCorrect > 9){
+        console.log("You passed");
+      } else {
+        console.log("You failed");
+      }
   }
 }
 

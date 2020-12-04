@@ -72,7 +72,6 @@ window.addEventListener("load", () => {
 
 // Stage 1
 const submitButton = document.getElementById("submit");
-// const cell = document.querySelectorAll("[radio]");
 
 document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   cell.addEventListener("click", () => {

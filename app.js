@@ -74,141 +74,140 @@ window.addEventListener("load", () => {
 const submitButton = document.getElementById("submit");
 // const cell = document.querySelectorAll("[radio]");
 
-document.querySelectorAll("[radio" + number + "]").forEach(cell => {
+document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   cell.addEventListener("click", () => {
     document.getElementById("emptyMessage" + number).remove();
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
-  })
+  });
 });
 
-
-function checkAnswer(questAnswer, answerKey){
-  if(questAnswer == answerKey){
+function checkAnswer(questAnswer, answerKey) {
+  if (questAnswer == answerKey) {
     countCorrect++;
   } else {
-    countMistake++;} 
+    countMistake++;
+  }
 }
 
-function answerCheck(questAnswer, answerKey, number){
-  if(questAnswer == ""){
+function answerCheck(questAnswer, answerKey, number) {
+  if (questAnswer == "") {
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
-    document.getElementById("emptyMessage" + number).innerText = "Please filled out your answer on question number " + number;
+    document.getElementById("emptyMessage" + number).innerText =
+      "Please filled out your answer on question number " + number;
     set = "no";
-    count++;  
-    if(count > 0){
-    submitButton.disabled = true;      
-    submitButton.style.cursor = "not-allowed";
+    count++;
+    if (count > 0) {
+      submitButton.disabled = true;
+      submitButton.style.cursor = "not-allowed";
     } else {
-      submitButton.disabled = false;      
+      submitButton.disabled = false;
       submitButton.style.cursor = "pointer";
     }
-          document.querySelectorAll("[radio" + number + "]").forEach(cell => {
-            cell.addEventListener("click", () => {
-              document.getElementById("emptyMessage" + number).remove();  
-              countClick++;    
+    document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
+      cell.addEventListener("click", () => {
+        document.getElementById("emptyMessage" + number).remove();
+        countClick++;
 
-              if(countClick === 15){
-                set = "yes";
-                submitButton.disabled = false;
-                submitButton.style.cursor = "pointer";
-                submitButton.addEventListener("click", () => {
-                submitButton.disabled = true;
-                submitButton.style.cursor = "not-allowed";
-                console.log("Right " + countCorrect);
-                console.log("Wrong " + countMistake);
-                })
-              }
-            })
-          });      
+        if (countClick === 15) {
+          set = "yes";
+          submitButton.disabled = false;
+          submitButton.style.cursor = "pointer";
+          submitButton.addEventListener("click", () => {
+            submitButton.disabled = true;
+            submitButton.style.cursor = "not-allowed";
+            console.log("Right " + countCorrect);
+            console.log("Wrong " + countMistake);
+          });
+        }
+      });
+    });
   } else {
     checkAnswer(questAnswer, answerKey);
-    countClick++;    
+    countClick++;
   }
 }
 
 // Answer database
 
-function questAnswer(){
-    let questAnswer1 = document.quiz.question1.value;
-    number = 1;
-    answerKey = "C";
-    answerCheck(questAnswer1, answerKey, number);
-    let questAnswer2 = document.quiz.question2.value;
-    number = 2;
-    answerKey = "A";
-    answerCheck(questAnswer2, answerKey, number);  
-    let questAnswer3 = document.quiz.question3.value;
-    number = 3;
-    answerKey = "D";
-    answerCheck(questAnswer3, answerKey, number);
-    let questAnswer4 = document.quiz.question4.value;
-    number = 4;
-    answerKey = "A"
-    answerCheck(questAnswer4, answerKey, number);
-    let questAnswer5 = document.quiz.question5.value;
-    number = 5;
-    answerKey = "D";
-    answerCheck(questAnswer5, answerKey, number);
-    let questAnswer6 = document.quiz.question6.value;
-    number = 6;
-    answerKey = "B";
-    answerCheck(questAnswer6, answerKey, number);
-    let questAnswer7 = document.quiz.question7.value;
-    number = 7;
-    answerKey = "C";
-    answerCheck(questAnswer7, answerKey, number);
-    let questAnswer8 = document.quiz.question8.value;
-    number = 8;
-    answerKey = "A";
-    answerCheck(questAnswer8, answerKey, number);  
-    let questAnswer9 = document.quiz.question9.value;
-    number = 9;
-    answerKey = "B";
-    answerCheck(questAnswer9, answerKey, number);
-    let questAnswer10 = document.quiz.question10.value;
-    number = 10;
-    answerKey = "D"
-    answerCheck(questAnswer10, answerKey, number);
-    let questAnswer11 = document.quiz.question11.value;
-    number = 11;
-    answerKey = "C";
-    answerCheck(questAnswer11, answerKey, number);
-    let questAnswer12 = document.quiz.question12.value;
-    number = 12;
-    answerKey = "A";
-    answerCheck(questAnswer12, answerKey, number);
-    let questAnswer13 = document.quiz.question13.value;
-    number = 13;
-    answerKey = "A";
-    answerCheck(questAnswer13, answerKey, number);
-    let questAnswer14 = document.quiz.question14.value;
-    number = 14;
-    answerKey = "B"
-    answerCheck(questAnswer14, answerKey, number);
-    let questAnswer15 = document.quiz.question15.value;
-    number = 15;
-    answerKey = "D";
-    answerCheck(questAnswer15, answerKey, number);
-    if(countClick === 15){
-      submitButton.disabled = true;
-      submitButton.style.cursor = "not-allowed";
-      console.log("Correct " + countCorrect);
-      console.log("Wrong " + countMistake);
-    }
-    if(set == "no"){
-      console.log(count);
-      console.log("Filled out all the question first");
-    } 
+function questAnswer() {
+  let questAnswer1 = document.quiz.question1.value;
+  number = 1;
+  answerKey = "C";
+  answerCheck(questAnswer1, answerKey, number);
+  let questAnswer2 = document.quiz.question2.value;
+  number = 2;
+  answerKey = "A";
+  answerCheck(questAnswer2, answerKey, number);
+  let questAnswer3 = document.quiz.question3.value;
+  number = 3;
+  answerKey = "D";
+  answerCheck(questAnswer3, answerKey, number);
+  let questAnswer4 = document.quiz.question4.value;
+  number = 4;
+  answerKey = "A";
+  answerCheck(questAnswer4, answerKey, number);
+  let questAnswer5 = document.quiz.question5.value;
+  number = 5;
+  answerKey = "D";
+  answerCheck(questAnswer5, answerKey, number);
+  let questAnswer6 = document.quiz.question6.value;
+  number = 6;
+  answerKey = "B";
+  answerCheck(questAnswer6, answerKey, number);
+  let questAnswer7 = document.quiz.question7.value;
+  number = 7;
+  answerKey = "C";
+  answerCheck(questAnswer7, answerKey, number);
+  let questAnswer8 = document.quiz.question8.value;
+  number = 8;
+  answerKey = "A";
+  answerCheck(questAnswer8, answerKey, number);
+  let questAnswer9 = document.quiz.question9.value;
+  number = 9;
+  answerKey = "B";
+  answerCheck(questAnswer9, answerKey, number);
+  let questAnswer10 = document.quiz.question10.value;
+  number = 10;
+  answerKey = "D";
+  answerCheck(questAnswer10, answerKey, number);
+  let questAnswer11 = document.quiz.question11.value;
+  number = 11;
+  answerKey = "C";
+  answerCheck(questAnswer11, answerKey, number);
+  let questAnswer12 = document.quiz.question12.value;
+  number = 12;
+  answerKey = "A";
+  answerCheck(questAnswer12, answerKey, number);
+  let questAnswer13 = document.quiz.question13.value;
+  number = 13;
+  answerKey = "A";
+  answerCheck(questAnswer13, answerKey, number);
+  let questAnswer14 = document.quiz.question14.value;
+  number = 14;
+  answerKey = "B";
+  answerCheck(questAnswer14, answerKey, number);
+  let questAnswer15 = document.quiz.question15.value;
+  number = 15;
+  answerKey = "D";
+  answerCheck(questAnswer15, answerKey, number);
+  if (countClick === 15) {
+    submitButton.disabled = true;
+    submitButton.style.cursor = "not-allowed";
+    console.log("Correct " + countCorrect);
+    console.log("Wrong " + countMistake);
+  }
+  if (set == "no") {
+    console.log(count);
+    console.log("Filled out all the question first");
+  }
 }
 
-
 submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    questAnswer();
-    
+  questAnswer();
 });
 
 // Stage 2
@@ -525,8 +524,8 @@ function testLogic() {
       userAnswer = input15.value;
       answerKey = 1;
       testAnswer(userAnswer, answerKey, text15, input15, p15, number);
-      document.getElementById("answerDiv15").appendChild(p15);      
-    if (state === "start") {
+      document.getElementById("answerDiv15").appendChild(p15);
+      if (state === "start") {
         input15.disabled = true;
         input15.className = "notCursor";
         document.getElementById("answerDiv15").appendChild(p15);
@@ -561,5 +560,5 @@ function testLogic() {
         }
       }
     }
-    });
-  }    
+  });
+}

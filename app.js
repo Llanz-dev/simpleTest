@@ -61,7 +61,6 @@ let p15 = document.createElement("p");
 let text15;
 
 // Loading screen
-
 window.addEventListener("load", () => {
   load.className += " hidden";
   passContainer.style.display = "none";
@@ -73,6 +72,7 @@ window.addEventListener("load", () => {
 // Stage 1
 const submitButton = document.getElementById("submit");
 
+// This all gets the input radio
 document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   cell.addEventListener("click", () => {
     document.getElementById("emptyMessage" + number).remove();
@@ -81,34 +81,63 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   });
 });
 
+// This function checks the answer if it's right or wrong
 function checkAnswer(questAnswer, answerKey) {
   if (questAnswer == answerKey) {
+    // document.getElementById("questionNumber" + number).style.color = "green";
+    // if(set == "yow"){
+      document.getElementById("emptyMessage" + number).textContent = answerKey + " is CORRECT";
+    // }
+    // document.getElementById("emptyMessage" + number).style.color = "green";
+    // if(set == "no"){
+    //   const createSpan = document.createElement("span");
+    //   const spanMessage = document.createTextNode(answerKey + " is CORRECT");
+    //   createSpan.appendChild(spanMessage);
+    //   document.getElementById("message15").appendChild(createSpan);
+    // }
     countCorrect++;
   } else {
+    // document.getElementById("questionNumber" + number).style.color = "red";
+    // if(set == "yow"){
+      document.getElementById("emptyMessage" + number).textContent = questAnswer + " is WRONG";
+    // }
+    // document.getElementById("emptyMessage" + number).style.color = "red";
+    // if(set == "no"){
+    //   const createSpan = document.createElement("span");
+    //   const spanMessage = document.createTextNode(answerKey + " is CORRECT");
+    //   createSpan.appendChild(spanMessage);
+    //   document.getElementById("message15").appendChild(createSpan);
+    // }
     countMistake++;
   }
 }
 
+// It checks the answer wether the user answer the questions or not
 function answerCheck(questAnswer, answerKey, number) {
   if (questAnswer == "") {
     submitButton.disabled = false;
     submitButton.style.cursor = "pointer";
     document.getElementById("emptyMessage" + number).innerText =
       "Please filled out your answer on question number " + number;
-    set = "no";
+    document.getElementById("emptyMessage"+ number).style.color = "yellow";
     count++;
     if (count > 0) {
       submitButton.disabled = true;
       submitButton.style.cursor = "not-allowed";
+      countCorrect = 0;
+      countMistake = 0;
     } else {
       submitButton.disabled = false;
       submitButton.style.cursor = "pointer";
     }
+
+    // This removes the message if the user finally answer the specific question
     document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
       cell.addEventListener("click", () => {
         document.getElementById("emptyMessage" + number).remove();
         countClick++;
 
+        // This will declare to disabled or not if the user answer all the questions
         if (countClick === 15) {
           set = "yes";
           submitButton.disabled = false;
@@ -123,13 +152,14 @@ function answerCheck(questAnswer, answerKey, number) {
       });
     });
   } else {
-    checkAnswer(questAnswer, answerKey);
+    checkAnswer(questAnswer, answerKey, number);
     countClick++;
+        set = "yow";
+
   }
 }
 
 // Answer database
-
 function questAnswer() {
   let questAnswer1 = document.quiz.question1.value;
   number = 1;
@@ -191,21 +221,24 @@ function questAnswer() {
   number = 15;
   answerKey = "D";
   answerCheck(questAnswer15, answerKey, number);
+
+  // This will display if the user answered all the questions
   if (countClick === 15) {
     submitButton.disabled = true;
     submitButton.style.cursor = "not-allowed";
     console.log("Correct " + countCorrect);
     console.log("Wrong " + countMistake);
   }
+
+  // This alert will pop up on how many questions the user did not answered
   if (set == "no") {
-    console.log(count);
-    console.log("Filled out all the question first");
+    alert("Answer the " + count + " remaining questions");
   }
 }
 
+// This will run all the function in stage 1
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-
   questAnswer();
 });
 

@@ -71,6 +71,7 @@ window.addEventListener("load", () => {
 
 // Stage 1
 const submitButton = document.getElementById("submit");
+submitButton.style.cursor = "pointer";
 
 // This all gets the input radio
 document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
@@ -84,12 +85,12 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
 // This function checks the answer if it's right or wrong
 function checkAnswer(questAnswer, answerKey) {
   if (questAnswer == answerKey) {    
-    document.getElementById("emptyMessage" + number).textContent = answerKey + " is CORRECT";
-    document.getElementById("emptyMessage" + number).style.color = "green";
+    document.getElementById("answerMessage" + number).textContent = answerKey + " is CORRECT";
+    document.getElementById("answerMessage" + number).style.color = "green";
     countCorrect++;
   } else {
-    document.getElementById("emptyMessage" + number).textContent = questAnswer + " is WRONG";
-    document.getElementById("emptyMessage" + number).style.color = "red";
+    document.getElementById("answerMessage" + number).textContent = questAnswer + " is WRONG";
+    document.getElementById("answerMessage" + number).style.color = "red";
     countMistake++;
   }
 }
@@ -118,6 +119,12 @@ function answerCheck(questAnswer, answerKey, number) {
       cell.addEventListener("click", () => {
         countClick++;
 
+        if (countClick > 0) {
+          document.getElementById("emptyMessage" + number).style.display = "none";
+        }else {
+          document.getElementById("emptyMessage" + number).style.display = "block";
+        }
+
         // This will declare to disabled or not if the user answer all the questions
         if (countClick === 15) {
           submitButton.disabled = false;
@@ -133,11 +140,7 @@ function answerCheck(questAnswer, answerKey, number) {
               console.log("You failed");
             }
           });
-        } else if (countClick > 0) {
-          document.getElementById("emptyMessage" + number).style.display = "block";
-        }else {
-          document.getElementById("emptyMessage" + number).style.display = "none";
-        }
+        } 
       });
     });
   } else {

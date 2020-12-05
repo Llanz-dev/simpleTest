@@ -1,6 +1,6 @@
 Basic Math test with simple functionality of JavaScript
 
-Many bugs.
+Many bugs and errors.
 Still working...
 
 Answer key:

@@ -1,5 +1,5 @@
 const load = document.getElementById("loader");
-let number, state, userAnswer, answerKey, set;
+let number, state, userAnswer, answerKey, totalClick;
 let click = 0;
 let count = 0;
 let countClick = 0;
@@ -83,15 +83,28 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
 });
 
 // This function checks the answer if it's right or wrong
-function checkAnswer(questAnswer, answerKey) {
+function checkAnswer(questAnswer, answerKey, number) {
   if (questAnswer == answerKey) {    
     document.getElementById("answerMessage" + number).textContent = answerKey + " is CORRECT";
     document.getElementById("answerMessage" + number).style.color = "green";
     countCorrect++;
+    document.getElementById("inputRadio" + number).disabled = true;
   } else {
     document.getElementById("answerMessage" + number).textContent = questAnswer + " is WRONG";
     document.getElementById("answerMessage" + number).style.color = "red";
     countMistake++;
+  //   document.querySelectorAll("[radio" + number + "]").forEach(allRadio => {
+  //   allRadio.disabled = false;
+  // });
+  }
+
+  document.querySelectorAll("[radio" + number + "]").forEach(allRadio => {
+    allRadio.disabled = true;
+  });  
+
+  totalClick = countMistake + countCorrect;
+  if(totalClick == 15){
+    Scoring(number);
   }
 }
 
@@ -100,58 +113,30 @@ function answerCheck(questAnswer, answerKey, number) {
   if (questAnswer == "") {
     countCorrect = 0;
     countMistake = 0;
-    submitButton.disabled = false;
-    submitButton.style.cursor = "pointer";
     document.getElementById("emptyMessage" + number).innerText =
       "Please filled out your answer on question number " + number;
     document.getElementById("emptyMessage"+ number).style.color = "yellow";
-    count++;
-    if (count > 0) {
-      submitButton.disabled = true;
-      submitButton.style.cursor = "not-allowed";
-    } else {
-      submitButton.disabled = false;
-      submitButton.style.cursor = "pointer";
-    }
 
     // This removes the message if the user finally answer the specific question
     document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
-      cell.addEventListener("click", () => {
-        countClick++;
-
+    cell.addEventListener("click", () => {
+    countClick++;
         if (countClick > 0) {
           document.getElementById("emptyMessage" + number).style.display = "none";
-        }else {
+          checkAnswer(questAnswer, answerKey, number);
+        } else {
           document.getElementById("emptyMessage" + number).style.display = "block";
         }
-
-        // This will declare to disabled or not if the user answer all the questions
-        if (countClick === 15) {
-          submitButton.disabled = false;
-          submitButton.style.cursor = "pointer";
-          submitButton.addEventListener("click", () => {
-            submitButton.disabled = true;
-            submitButton.style.cursor = "not-allowed";
-            console.log("Right " + countCorrect);
-            console.log("Wrong " + countMistake);
-            if(countCorrect > 9){
-              console.log("You passed");
-            } else {
-              console.log("You failed");
-            }
-          });
-        } 
       });
     });
   } else {
     checkAnswer(questAnswer, answerKey, number);
-    countClick++;
   }
 }
 
 // Answer database
 function questAnswer() {
-  let questAnswer1 = document.quiz.question1.value;
+  let questAnswer1 = document.quiz.question1.value;  
   number = 1;
   answerKey = "C";
   answerCheck(questAnswer1, answerKey, number);
@@ -210,12 +195,15 @@ function questAnswer() {
   let questAnswer15 = document.quiz.question15.value;
   number = 15;
   answerKey = "D";
-  answerCheck(questAnswer15, answerKey, number);
+  answerCheck(questAnswer15, answerKey, number);  
+}
 
-  // This will display if the user answered all the questions
-  if (countClick === 15) {
+function Scoring(number){
     submitButton.disabled = true;
     submitButton.style.cursor = "not-allowed";
+    // document.querySelectorAll("[radio" + number + "]").forEach(allRadio => {
+    //   allRadio.disabled = true;
+    // });
     console.log("Correct " + countCorrect);
     console.log("Wrong " + countMistake);
       if(countCorrect > 9){
@@ -223,7 +211,6 @@ function questAnswer() {
       } else {
         console.log("You failed");
       }
-  }
 }
 
 // This will run all the function in stage 1

@@ -1,6 +1,6 @@
 const load = document.getElementById("loader");
 let number, state, userAnswer, answerKey, totalClick, set;
-let countClick = 0;
+let countClick;
 let countMistake = 0;
 let countCorrect = 0;
 let buttonBack = document.getElementById("buttonBack");
@@ -72,10 +72,6 @@ const submitButton = document.getElementById("submit");
 
 submitButton.style.cursor = "pointer";
 
-// function radioChoose(hey) {
-//   hey.disabled = false;
-// }
-
 // This all gets the input radio
 document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   cell.addEventListener("click", () => {
@@ -85,59 +81,41 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
   });
 });
 
-// This function checks the answer if it's right or wrong
-function checkAnswer(questAnswer, answerKey, number) {
-  if (set == "yes") {
-  }
-  if (questAnswer == answerKey) {
+// It checks the answer wether the user answer the questions or not
+function answerCheck(questAnswer, answerKey, number) {
+  if (questAnswer == "") {
+    countCorrect = 0;
+    countMistake = 0;
+    countClick = 0;
+    // document.getElementById("emptyMessage" + number).textContent =
+    //   "Please filled out your answer on number " + number;
+    // document.getElementById("emptyMessage" + number).style.color = "yellow";
+    // document.querySelectorAll("[radio" + number + "]").forEach((allRadio) => {
+    //   allRadio.addEventListener("click", () => {
+    //     document.getElementById("emptyMessage" + number).style.display = "none";
+    //   });
+    // });
+  } else if (questAnswer == answerKey) {
+    if (countClick === 0) {
+      document.getElementById("answerMessage" + number).style.display = "none";
+    }
     document.getElementById("answerMessage" + number).textContent =
       answerKey + " is CORRECT";
     document.getElementById("answerMessage" + number).style.color = "green";
     countCorrect++;
   } else {
+    if (countClick === 0) {
+      document.getElementById("answerMessage" + number).style.display = "none";
+    }
     document.getElementById("answerMessage" + number).textContent =
       questAnswer + " is WRONG";
     document.getElementById("answerMessage" + number).style.color = "red";
     countMistake++;
   }
-
   totalClick = countMistake + countCorrect;
+
   if (totalClick == 15) {
     Scoring();
-  }
-}
-
-// It checks the answer wether the user answer the questions or not
-function answerCheck(questAnswer, answerKey, number) {
-  if (questAnswer == "") {
-    // const allRadio = document.querySelectorAll("[radio" + number + "]");
-    set = "yes";
-    countCorrect = 0;
-    countMistake = 0;
-    document.getElementById("emptyMessage" + number).innerText =
-      "Please filled out your answer on question number " + number;
-    document.getElementById("emptyMessage" + number).style.color = "yellow";
-
-    // allRadio.forEach((allRadio) => {
-    //   allRadio.disabled = true;
-    // });
-
-    // This removes the message if the user finally answer the specific question
-    document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
-      cell.addEventListener("click", () => {
-        countClick++;
-        if (countClick > 0) {
-          document.getElementById("emptyMessage" + number).style.display =
-            "none";
-          checkAnswer(questAnswer, answerKey, number);
-        } else {
-          document.getElementById("emptyMessage" + number).style.display =
-            "block";
-        }
-      });
-    });
-  } else {
-    checkAnswer(questAnswer, answerKey, number);
   }
 }
 
@@ -205,6 +183,7 @@ function questAnswer() {
   answerCheck(questAnswer15, answerKey, number);
 }
 
+// It checks the score
 function Scoring() {
   submitButton.disabled = true;
   submitButton.style.cursor = "not-allowed";

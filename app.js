@@ -1,8 +1,9 @@
 const load = document.getElementById("loader");
 let number, state, userAnswer, answerKey, totalClick, set;
-let countClick = 0;
-let countMistake = 0;
-let countCorrect = 0;
+let countMistake1 = 0,
+  countMistake2 = 0;
+let countCorrect1 = 0,
+  countCorrect2 = 0;
 let buttonBack = document.getElementById("buttonBack");
 let buttonRetake = document.getElementById("buttonRetake");
 let buttonContinue = document.getElementById("buttonContinue");
@@ -62,9 +63,11 @@ let text15;
 window.addEventListener("load", () => {
   load.className += " hidden";
   passContainer.style.display = "none";
-  buttonBack.addEventListener("click", function () {
-    passContainer.style.display = "none";
-  });
+});
+
+// Button back function
+buttonBack.addEventListener("click", function () {
+  passContainer.style.display = "none";
 });
 
 // Stage 1
@@ -82,9 +85,10 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
 
 // It checks the answer wether the user answer the questions or not
 function answerCheck(questAnswer, answerKey, number) {
+  // This is the code if the user did not filled out the the questions
   if (questAnswer == "") {
-    countCorrect = 0;
-    countMistake = 0;
+    countCorrect1 = 0;
+    countMistake1 = 0;
     document.getElementById("emptyMessage" + number).textContent =
       "Please filled out your answer on number " + number;
     document.getElementById("emptyMessage" + number).style.color = "yellow";
@@ -93,30 +97,34 @@ function answerCheck(questAnswer, answerKey, number) {
         document.getElementById("emptyMessage" + number).style.display = "none";
       });
     });
+    // This is the code if the user answered correctly
   } else if (questAnswer == answerKey) {
     document.getElementById("answerMessage" + number).textContent =
       answerKey + " is CORRECT";
     document.getElementById("answerMessage" + number).style.color = "green";
-    countCorrect++;
+    countCorrect1++;
     document.querySelectorAll("[radio" + number + "]").forEach((radios) => {
       radios.disabled = true;
     });
+
+    // This is the code if the user did not answered correctly
   } else {
     document.getElementById("answerMessage" + number).textContent =
       questAnswer + " is WRONG";
     document.getElementById("answerMessage" + number).style.color = "red";
-    countMistake++;
+    countMistake1++;
     document.querySelectorAll("[radio" + number + "]").forEach((radios) => {
       radios.disabled = true;
     });
   }
-  totalClick = countMistake + countCorrect;
-
+  totalClick = countMistake1 + countCorrect1;
   if (totalClick == 15) {
     Scoring();
   }
 }
 
+input1.disabled = true;
+input1.classList.add("notCursor");
 // Answer database
 function questAnswer() {
   let questAnswer1 = document.quiz.question1.value;
@@ -199,10 +207,15 @@ function questAnswer() {
 function Scoring() {
   submitButton.disabled = true;
   submitButton.style.cursor = "not-allowed";
-  console.log("Correct " + countCorrect);
-  console.log("Wrong " + countMistake);
-  if (countCorrect > 9) {
+  console.log("Correct " + countCorrect1);
+  console.log("Wrong " + countMistake1);
+  // Showing the output if the user pass the test in stage 2
+  if (countCorrect1 > 9) {
     console.log("You passed");
+    input1.disabled = false;
+    input1.classList.add("txtCursor");
+
+    // Showing the output if the user failed the test in stage 2
   } else {
     console.log("You failed");
   }
@@ -238,7 +251,7 @@ function correctAnswer(text, input, p, userAnswer) {
   p.appendChild(text);
   input.disabled = true;
   checkCursor(input);
-  countCorrect++;
+  countCorrect2++;
 }
 
 // Function if the answer is wrong
@@ -249,7 +262,7 @@ function wrongAnswer(text, input, p, userAnswer) {
   p.appendChild(text);
   input.disabled = true;
   checkCursor(input);
-  countMistake++;
+  countMistake2++;
 }
 
 // Function if what is the judgement of your answer
@@ -294,8 +307,6 @@ testLogic();
 // All the test logic functions
 function testLogic() {
   // number 1 logic flow
-  input1.disabled = true;
-  input1.classList = "notCursor";
   input1.addEventListener("keyup", function (e) {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -533,34 +544,32 @@ function testLogic() {
         input15.disabled = true;
         input15.className = "notCursor";
         document.getElementById("answerDiv15").appendChild(p15);
+
         // After the test
-        const correct = "Number of correct: " + countCorrect;
-        const mistake = "Number of mistake: " + countMistake;
-        const noAnswer = "Number of blank answer: " + countNone;
-        const noneCount = document.createElement("h1");
+        const correct = "Number of correct: " + countCorrect2;
+        const mistake = "Number of mistake: " + countMistake2;
         const correctCount = document.createElement("h1");
         const mistakeCount = document.createElement("h1");
-        const textBlank = document.createTextNode(noAnswer);
         const textCorrect = document.createTextNode(correct);
         const textMistake = document.createTextNode(mistake);
         correctCount.appendChild(textCorrect);
         mistakeCount.appendChild(textMistake);
-        noneCount.appendChild(textBlank);
         document.getElementById("correctDiv").appendChild(correctCount);
         document.getElementById("mistakeDiv").appendChild(mistakeCount);
         passContainer.style.display = "flex";
 
-        // Showing the output if the user pass the test
-        if (countCorrect > 2) {
+        // Showing the output if the user pass the test in stage 2
+        if (countCorrect2 > 9) {
           h2.classList.add("green");
           h2.innerHTML = "You passed the test!";
           question.innerText = "Do you want to continue?";
         }
-        // Showing the output if the user failed the test
+        // Showing the output if the user failed the test in stage 2
         else {
           h2.classList.add("red");
           h2.innerHTML = "You failed the test";
           question.innerText = "Do you want to retake?";
+          buttonContinue.style.display = "none";
         }
       }
     }

@@ -1,599 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Master</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Master</title>
+</head>
 
-  <body>
-    <!-- Loading screen -->
-    <div class="loader" id="loader">
-      <img src="loading.gif" alt="loading..." />
-    </div>
+<body>
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <img src="loading.gif" alt="loading..." />
+  </div>
 
-    <!-- Stage 1 -->
-    <!-- Number 1 -->
-    <form name="quiz" id="quiz1">
-      <div class="container">
-        <div class="title-div">
-          <h1>Stage 1</h1>
-        </div>
-        <div class="content-1">
-          <div class="box-1">
-            <div class="container-1">
-              <!-- C -->
-              <span id="answerMessage1" answerMessage1></span>
-              <span id="emptyMessage1"></span>
-              <h3 id="questionNumber1">
-                1) A _______, also called a central processor, main processor or
-                just processor, is the electronic circuitry within a computer that
-                executes instructions that make up a computer program.
-              </h3>
-              <p>
-                <input type="radio" name="question1" class="inputRadio1" id="inputRadio1" value="A" radio1 />
-                A) Graphics Processing Unit
-              </p>
-
-              <p>
-                <input type="radio" name="question1" class="inputRadio1" id="inputRadio2" value="B" radio1 />
-                B) Random-Access Memory
-              </p>
-              <p>
-                <input type="radio" name="question1" class="inputRadio1" id="inputRadio3" value="C" radio1 />
-                C) Central Processing Unit
-              </p>
-              <p>
-                <input type="radio" name="question1" class="inputRadio1" id="inputRadio4" value="D" radio1 />
-                D) Power Supply Unit
-              </p>
-            </div>
-            <!-- Number 2 -->
-            <div class="container-1">
-              <!-- A -->
-              <span id="answerMessage2" answerMessage2></span>
-              <span id="emptyMessage2"></span>
-              <h3 id="questionNumber2">
-                2) What is the technology consisting of computer components and
-                recording media that are used to retain digital data?
-              </h3>
-              <p>
-                <input type="radio" name="question2" class="inputRadio2" id="inputRadio5" value="A" radio2 />
-                A) Computer data storage
-              </p>
-              <p>
-                <input type="radio" name="question2" class="inputRadio2" id="inputRadio6" value="B" radio2 />
-                B) Monitor
-              </p>
-              <p>
-                <input type="radio" name="question2" class="inputRadio2" id="inputRadio7" value="C" radio2 />
-                C) Motherboard
-              </p>
-              <p>
-                <input type="radio" name="question2" class="inputRadio2" id="inputRadio8" value="D" radio2 />
-                D) Optical Drive
-              </p>
-            </div>
-            <!-- Number 3 -->
-            <div class="container-1">
-              <!-- D -->
-              <span id="answerMessage3" answerMessage3></span>
-              <span id="emptyMessage3"></span>
-              <h3 id="questionNumber3">
-                3) It is a small chip that resides in computers and other electronic
-                devices.
-              </h3>
-              <p>
-                <input type="radio" name="question3" class="inputRadio3" id="inputRadio9" value="A" radio3 />
-                A) Motherboard
-              </p>
-              <p>
-                <input type="radio" name="question3" class="inputRadio3" id="inputRadio10" value="B" radio3 />
-                B) Random-access Memory
-              </p>
-              <p>
-                <input type="radio" name="question3" class="inputRadio3" id="inputRadio11" value="C" radio3 />
-                C) Solid State Drive
-              </p>
-              <p>
-                <input type="radio" name="question3" class="inputRadio3" id="inputRadio12" value="D" radio3 />
-                D) Processor
-              </p>
-            </div>
-            <!-- Number 4 -->
-            <div class="container-1">
-              <!-- A -->
-              <span id="answerMessage4" answerMessage4></span>
-              <span id="emptyMessage4"></span>
-              <h3 id="questionNumber4">
-                4) A _______ is a dedicated unit for handling the output of images
-                to a display.
-              </h3>
-              <p>
-                <input type="radio" name="question4" class="inputRadio4" id="inputRadio13" value="A" radio4 />
-                A) Video Card
-              </p>
-              <p>
-                <input type="radio" name="question4" class="inputRadio4" id="inputRadio14" value="B" radio4 />
-                B) Central Processing Unit
-              </p>
-              <p>
-                <input type="radio" name="question4" class="inputRadio4" id="inputRadio15" value="C" radio4 />
-                C) Power Supply Unit
-              </p>
-              <p>
-                <input type="radio" name="question4" class="inputRadio4" id="inputRadio16" value="D" radio4 />
-                D) Hard Disk Drive
-              </p>
-            </div>
-            <!-- Number 5 -->
-            <div class="container-1">
-              <!-- D -->
-              <span id="answerMessage5" answerMessage5></span>
-              <span id="emptyMessage5"></span>
-              <h3 id="questionNumber5">
-                5) It is also known as a computer chassis, tower, system unit, or
-                cabinet.
-              </h3>
-              <p>
-                <input type="radio" name="question5" class="inputRadio5" id="inputRadio17" value="A" radio5 />
-                A) System cooling
-              </p>
-              <p>
-                <input type="radio" name="question5" class="inputRadio5" id="inputRadio18" value="B" radio5 />
-                B) Operating System
-              </p>
-              <p>
-                <input type="radio" name="question5" class="inputRadio5" id="inputRadio19" value="C" radio5 />
-                C) Power Supply Unit
-              </p>
-              <p>
-                <input type="radio" name="question5" class="inputRadio5" id="inputRadio20" value="D" radio5 />
-                D) Computer Case
-              </p>
-
-            </div>
-          </div>
-
-          <!-- Second -->
-          <!-- Number 6 -->
-          <div class="box-1">
-            <div class="container-1">
-              <!-- B -->
-              <span id="answerMessage6" answerMessage6></span>
-              <span id="emptyMessage6"></span>
-              <h3 id="questionNumber6">
-                6) What is the hardware component that supplies power to a device, enabling that device to work without
-                a power cord?
-              </h3>
-              <p>
-                <input type="radio" name="question6" class="inputRadio6" id="inputRadio21" value="A" radio6 />
-                A) Monitor
-              </p>
-              <p>
-                <input type="radio" name="question6" class="inputRadio6" id="inputRadio22" value="B" radio6 />
-                B) Battery
-              </p>
-              <p>
-                <input type="radio" name="question6" class="inputRadio6" id="inputRadio23" value="C" radio6 />
-                C) Powerbank
-              </p>
-              <p>
-                <input type="radio" name="question6" class="inputRadio6" id="inputRadio24" value="D" radio6 />
-                D) Power Supply Unit
-              </p>
-            </div>
-            <!-- Number 7 -->
-            <div class="container-1">
-              <!-- C -->
-              <span id="answerMessage7" answerMessage7></span>
-              <span id="emptyMessage7"></span>
-              <h3 id="questionNumber7">
-                7) What is the new generation of storage device used in computers?
-              </h3>
-              <p>
-                <input type="radio" name="question7" class="inputRadio7" id="inputRadio25" value="A" radio7 />
-                A) LaserDisc
-              </p>
-              <p>
-                <input type="radio" name="question7" class="inputRadio7" id="inputRadio26" value="B" radio7 />
-                B) Floppy disk
-              </p>
-              <p>
-                <input type="radio" name="question7" class="inputRadio7" id="inputRadio27" value="C" radio7 />
-                C) Solid-state drive
-              </p>
-              <p>
-                <input type="radio" name="question7" class="inputRadio7" id="inputRadio28" value="D" radio7 />
-                D) Magnetic tape
-              </p>
-            </div>
-            <!-- Number 8 -->
-            <div class="container-1">
-              <span id="answerMessage8" answerMessage8></span>
-              <span id="emptyMessage8"></span>
-              <h3 id="questionNumber8">
-                8) Fans are used to move air through the computer case.
-              </h3>
-              <p>
-                <input type="radio" name="question8" class="inputRadio8" id="inputRadio29" value="A" radio8 />
-                A) Graphics card fan
-              </p>
-              <p>
-                <input type="radio" name="question8" class="inputRadio8" id="inputRadio30" value="B" radio8 />
-                B) Case fan
-              </p>
-              <p>
-                <input type="radio" name="question8" class="inputRadio8" id="inputRadio31" value="C" radio8 />
-                C) Chipset fan
-              </p>
-              <p>
-                <input type="radio" name="question8" class="inputRadio8" id="inputRadio32" value="D" radio8 />
-                D) CPU fan
-              </p>
-            </div>
-            <!-- Number 9 -->
-            <div class="container-1">
-              <span id="answerMessage9" answerMessage9></span>
-              <span id="emptyMessage9"></span>
-              <h3 id="questionNumber9">
-                9) What is an output device that displays information in pictorial form?
-              </h3>
-              <p>
-                <input type="radio" name="question9" class="inputRadio9" id="inputRadio33" value="A" radio9 />
-                A) Image
-              </p>
-              <p>
-                <input type="radio" name="question9" class="inputRadio9" id="inputRadio34" value="B" radio9 />
-                B) Monitor
-              </p>
-              <p>
-                <input type="radio" name="question9" class="inputRadio9" id="inputRadio35" value="C" radio9 />
-                C) BIOS
-              </p>
-              <p>
-                <input type="radio" name="question9" class="inputRadio9" id="inputRadio36" value="D" radio9 />
-                D) Video card
-              </p>
-            </div>
-            <!-- Number 10 -->
-            <div class="container-1">
-              <span id="answerMessage10" answerMessage10></span>
-              <span id="emptyMessage10"></span>
-              <h3 id="questionNumber10">
-                10) It is a device used to put energy into a secondary cell or rechargeable battery by forcing an
-                electric
-                current through it.
-              </h3>
-              <p>
-                <input type="radio" name="question10" class="inputRadio10" id="inputRadio37" value="A" radio10 />
-                A) Generator
-              </p>
-              <p>
-                <input type="radio" name="question10" class="inputRadio10" id="inputRadio38" value="B" radio10 />
-                B) Powerbank
-              </p>
-              <p>
-                <input type="radio" name="question10" class="inputRadio10" id="inputRadio39" value="C" radio10 />
-                C) Power Supply Unit
-              </p>
-              <p>
-                <input type="radio" name="question10" class="inputRadio10" id="inputRadio40" value="D" radio10 />
-                D) Charger
-              </p>
-            </div>
-          </div>
-
-          <!-- Third -->
-          <!-- Number 11 -->
-          <div class="box-1">
-            <div class="container-1">
-              <span id="answerMessage11" answerMessage11></span>
-              <span id="emptyMessage11"></span>
-              <h3 id="questionNumber11">
-                11) A _______ is a typewriter-style device which uses an arrangement of buttons or keys to act as
-                mechanical
-                levers or electronic switches.
-              </h3>
-              <p>
-                <input type="radio" name="question11" class="inputRadio11" id="inputRadio41" value="A" radio11 />
-                A) Telephone keypad
-              </p>
-              <p>
-                <input type="radio" name="question11" class="inputRadio11" id="inputRadio42" value="B" radio11 />
-                B) Virtual keyboard
-              </p>
-              <p>
-                <input type="radio" name="question11" class="inputRadio11" id="inputRadio43" value="C" radio11 />
-                C) Computer keyboard
-              </p>
-              <p>
-                <input type="radio" name="question11" class="inputRadio11" id="inputRadio44" value="D" radio11 />
-                D) All of the above
-              </p>
-            </div>
-            <!-- Number 12 -->
-            <div class="container-1">
-              <span id="answerMessage12" answerMessage12></span>
-              <span id="emptyMessage12"></span>
-              <h3 id="questionNumber12">
-                12) What is the pack is a rechargeable battery pack with a built-in battery management system (BMS),
-                usually designed for use in a
-                portable computer such as a laptop?
-              </h3>
-              <p>
-                <input type="radio" name="question12" class="inputRadio12" id="inputRadio45" value="A" radio12 />
-                A) Smart battery
-              </p>
-              <p>
-                <input type="radio" name="question12" class="inputRadio12" id="inputRadio46" value="B" radio12 />
-                B) Nickel-cadmium battery
-              </p>
-              <p>
-                <input type="radio" name="question12" class="inputRadio12" id="inputRadio47" value="C" radio12 />
-                C) Lithium-ion battery
-              </p>
-              <p>
-                <input type="radio" name="question12" class="inputRadio12" id="inputRadio48" value="D" radio12 />
-                D) Nickel–metal hydride battery
-              </p>
-            </div>
-            <!-- Number 13 -->
-            <div class="container-1">
-              <span id="answerMessage13" answerMessage13></span>
-              <span id="emptyMessage13"></span>
-              <h3 id="questionNumber13">
-                13) It is a keyboard built with spring activated key switches.
-              </h3>
-              <p>
-                <input type="radio" name="question13" class="inputRadio13" id="inputRadio49" value="A" radio13 />
-                A) Mechanical keyboard
-              </p>
-              <p>
-                <input type="radio" name="question13" class="inputRadio13" id="inputRadio50" value="B" radio13 />
-                B) Membrane Keyboards
-              </p>
-              <p>
-                <input type="radio" name="question13" class="inputRadio13" id="inputRadio51" value="C" radio13 />
-                C) Flexible Keyboards
-              </p>
-              <p>
-                <input type="radio" name="question13" class="inputRadio13" id="inputRadio52" value="D" radio13 />
-                D) Ergonomic Keyboards
-              </p>
-            </div>
-            <!-- Number 14 -->
-            <div class="container-1">
-              <span id="answerMessage14" answerMessage14></span>
-              <span id="emptyMessage14"></span>
-              <h3 id="questionNumber14">
-                14) He is the inventor of computer mouse.
-              </h3>
-              <p>
-                <input type="radio" name="question14" class="inputRadio14" id="inputRadio53" value="A" radio14 />
-                A) Linus Torvalds
-              </p>
-              <p>
-                <input type="radio" name="question14" class="inputRadio14" id="inputRadio54" value="B" radio14 />
-                B) Douglas Engelbart
-              </p>
-              <p>
-                <input type="radio" name="question14" class="inputRadio14" id="inputRadio55" value="C" radio14 />
-                C) Christopher Latham Sholes
-              </p>
-              <p>
-                <input type="radio" name="question14" class="inputRadio14" id="inputRadio56" value="D" radio14 />
-                D) Charles Babbage
-              </p>
-            </div>
-            <!-- Number 15 -->
-            <div class="container-1">
-              <span id="answerMessage15" answerMessage15></span>
-              <span id="emptyMessage15"></span>
-              <h3 id="questionNumber15">
-                15) What year invented the laptop?
-              </h3>
-              <p>
-                <input type="radio" name="question15" class="inputRadio15" id="inputRadio57" value="A" radio15 />
-                A) 1974
-              </p>
-              <p>
-                <input type="radio" name="question15" class="inputRadio15" id="inputRadio58" value="B" radio15 />
-                B) 1983
-              </p>
-              <p>
-                <input type="radio" name="question15" class="inputRadio15" d="inputRadio59" value="C" radio15 />
-                C) 1960
-              </p>
-              <p>
-                <input type="radio" name="question15" class="inputRadio15" id="inputRadio60" value="D" radio15 />
-                D) 1984
-              </p>
-            </div>
-            <input type="submit" value="Submit" id="submit">
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <!-- Stage 2 -->
-
-    <!-- 1 to 5 -->
-
-    <!-- Number 1 -->
-    <div class="stage-2-div">
+  <!-- Stage 1 -->
+  <!-- Number 1 -->
+  <form name="quiz" id="quiz1">
+    <div class="container">
       <div class="title-div">
-        <h1>Stage 2</h1>
+        <h1>Stage 1</h1>
       </div>
-      <div class="box-2">
-        <div class="stage-2">
-          <div class="box-2">
-            <div class="container-2">
-              <!-- Number 1 -->
-              <div class="sameDiv div1">
-                <span id="span1"></span>
-                <h3 id="question1">1) 2 + 2 = ?</h3>
-                <input type="number" id="answer1" placeholder="answer" required />
-                <div id="answerDiv1"></div>
-              </div>
+      <div class="content-1">
+        <div class="box-1">
+          <div class="container-1">
+            <!-- C -->
+            <span id="answerMessage1" answerMessage1></span>
+            <span id="emptyMessage1"></span>
+            <h3 id="questionNumber1">
+              1) A _______, also called a central processor, main processor or
+              just processor, is the electronic circuitry within a computer that
+              executes instructions that make up a computer program.
+            </h3>
+            <p answerParagraph1>
+              <input type="radio" name="question1" class="inputRadio1" id="inputRadio1" value="A" radio1 />
+              A) Graphics Processing Unit
+            </p>
+            <p answerParagraph2>
+              <input type="radio" name="question1" class="inputRadio1" id="inputRadio2" value="B" radio1 />
+              B) Random-Access Memory
+            </p>
+            <p answerParagraph3>
+              <input type="radio" name="question1" class="inputRadio1" id="inputRadio3" value="C" radio1 />
+              C) Central Processing Unit
+            </p>
+            <p answerParagraph4>
+              <input type="radio" name="question1" class="inputRadio1" id="inputRadio4" value="D" radio1 />
+              D) Power Supply Unit
+            </p>
+          </div>
+          <!-- Number 2 -->
+          <div class="container-1">
+            <!-- A -->
+            <span id="answerMessage2" answerMessage2></span>
+            <span id="emptyMessage2"></span>
+            <h3 id="questionNumber2">
+              2) What is the technology consisting of computer components and
+              recording media that are used to retain digital data?
+            </h3>
+            <p>
+              <input type="radio" name="question2" class="inputRadio2" id="inputRadio5" value="A" radio2 />
+              A) Computer data storage
+            </p>
+            <p>
+              <input type="radio" name="question2" class="inputRadio2" id="inputRadio6" value="B" radio2 />
+              B) Monitor
+            </p>
+            <p>
+              <input type="radio" name="question2" class="inputRadio2" id="inputRadio7" value="C" radio2 />
+              C) Motherboard
+            </p>
+            <p>
+              <input type="radio" name="question2" class="inputRadio2" id="inputRadio8" value="D" radio2 />
+              D) Optical Drive
+            </p>
+          </div>
+          <!-- Number 3 -->
+          <div class="container-1">
+            <!-- D -->
+            <span id="answerMessage3" answerMessage3></span>
+            <span id="emptyMessage3"></span>
+            <h3 id="questionNumber3">
+              3) It is a small chip that resides in computers and other electronic
+              devices.
+            </h3>
+            <p>
+              <input type="radio" name="question3" class="inputRadio3" id="inputRadio9" value="A" radio3 />
+              A) Motherboard
+            </p>
+            <p>
+              <input type="radio" name="question3" class="inputRadio3" id="inputRadio10" value="B" radio3 />
+              B) Random-access Memory
+            </p>
+            <p>
+              <input type="radio" name="question3" class="inputRadio3" id="inputRadio11" value="C" radio3 />
+              C) Solid State Drive
+            </p>
+            <p>
+              <input type="radio" name="question3" class="inputRadio3" id="inputRadio12" value="D" radio3 />
+              D) Processor
+            </p>
+          </div>
+          <!-- Number 4 -->
+          <div class="container-1">
+            <!-- A -->
+            <span id="answerMessage4" answerMessage4></span>
+            <span id="emptyMessage4"></span>
+            <h3 id="questionNumber4">
+              4) A _______ is a dedicated unit for handling the output of images
+              to a display.
+            </h3>
+            <p>
+              <input type="radio" name="question4" class="inputRadio4" id="inputRadio13" value="A" radio4 />
+              A) Video Card
+            </p>
+            <p>
+              <input type="radio" name="question4" class="inputRadio4" id="inputRadio14" value="B" radio4 />
+              B) Central Processing Unit
+            </p>
+            <p>
+              <input type="radio" name="question4" class="inputRadio4" id="inputRadio15" value="C" radio4 />
+              C) Power Supply Unit
+            </p>
+            <p>
+              <input type="radio" name="question4" class="inputRadio4" id="inputRadio16" value="D" radio4 />
+              D) Hard Disk Drive
+            </p>
+          </div>
+          <!-- Number 5 -->
+          <div class="container-1">
+            <!-- D -->
+            <span id="answerMessage5" answerMessage5></span>
+            <span id="emptyMessage5"></span>
+            <h3 id="questionNumber5">
+              5) It is also known as a computer chassis, tower, system unit, or
+              cabinet.
+            </h3>
+            <p>
+              <input type="radio" name="question5" class="inputRadio5" id="inputRadio17" value="A" radio5 />
+              A) System cooling
+            </p>
+            <p>
+              <input type="radio" name="question5" class="inputRadio5" id="inputRadio18" value="B" radio5 />
+              B) Operating System
+            </p>
+            <p>
+              <input type="radio" name="question5" class="inputRadio5" id="inputRadio19" value="C" radio5 />
+              C) Power Supply Unit
+            </p>
+            <p>
+              <input type="radio" name="question5" class="inputRadio5" id="inputRadio20" value="D" radio5 />
+              D) Computer Case
+            </p>
 
-              <!-- Number 2 -->
-              <div class="sameDiv div2">
-                <span id="span2"></span>
-                <h3 id="question2">2) 10 x 3 = ?</h3>
-                <input type="number" id="answer2" placeholder="answer" required />
-                <div id="answerDiv2"></div>
-              </div>
+          </div>
+        </div>
 
-              <!-- Number 3 -->
-              <div class="sameDiv div3">
-                <span id="span3"></span>
-                <h3 id="question3">3) 15 - 4 = ?</h3>
-                <input type="number" id="answer3" placeholder="answer" required />
-                <div id="answerDiv3"></div>
-              </div>
+        <!-- Second -->
+        <!-- Number 6 -->
+        <div class="box-1">
+          <div class="container-1">
+            <!-- B -->
+            <span id="answerMessage6" answerMessage6></span>
+            <span id="emptyMessage6"></span>
+            <h3 id="questionNumber6">
+              6) What is the hardware component that supplies power to a device, enabling that device to work without
+              a power cord?
+            </h3>
+            <p>
+              <input type="radio" name="question6" class="inputRadio6" id="inputRadio21" value="A" radio6 />
+              A) Monitor
+            </p>
+            <p>
+              <input type="radio" name="question6" class="inputRadio6" id="inputRadio22" value="B" radio6 />
+              B) Battery
+            </p>
+            <p>
+              <input type="radio" name="question6" class="inputRadio6" id="inputRadio23" value="C" radio6 />
+              C) Powerbank
+            </p>
+            <p>
+              <input type="radio" name="question6" class="inputRadio6" id="inputRadio24" value="D" radio6 />
+              D) Power Supply Unit
+            </p>
+          </div>
+          <!-- Number 7 -->
+          <div class="container-1">
+            <!-- C -->
+            <span id="answerMessage7" answerMessage7></span>
+            <span id="emptyMessage7"></span>
+            <h3 id="questionNumber7">
+              7) What is the new generation of storage device used in computers?
+            </h3>
+            <p>
+              <input type="radio" name="question7" class="inputRadio7" id="inputRadio25" value="A" radio7 />
+              A) LaserDisc
+            </p>
+            <p>
+              <input type="radio" name="question7" class="inputRadio7" id="inputRadio26" value="B" radio7 />
+              B) Floppy disk
+            </p>
+            <p>
+              <input type="radio" name="question7" class="inputRadio7" id="inputRadio27" value="C" radio7 />
+              C) Solid-state drive
+            </p>
+            <p>
+              <input type="radio" name="question7" class="inputRadio7" id="inputRadio28" value="D" radio7 />
+              D) Magnetic tape
+            </p>
+          </div>
+          <!-- Number 8 -->
+          <div class="container-1">
+            <span id="answerMessage8" answerMessage8></span>
+            <span id="emptyMessage8"></span>
+            <h3 id="questionNumber8">
+              8) Fans are used to move air through the computer case.
+            </h3>
+            <p>
+              <input type="radio" name="question8" class="inputRadio8" id="inputRadio29" value="A" radio8 />
+              A) Graphics card fan
+            </p>
+            <p>
+              <input type="radio" name="question8" class="inputRadio8" id="inputRadio30" value="B" radio8 />
+              B) Case fan
+            </p>
+            <p>
+              <input type="radio" name="question8" class="inputRadio8" id="inputRadio31" value="C" radio8 />
+              C) Chipset fan
+            </p>
+            <p>
+              <input type="radio" name="question8" class="inputRadio8" id="inputRadio32" value="D" radio8 />
+              D) CPU fan
+            </p>
+          </div>
+          <!-- Number 9 -->
+          <div class="container-1">
+            <span id="answerMessage9" answerMessage9></span>
+            <span id="emptyMessage9"></span>
+            <h3 id="questionNumber9">
+              9) What is an output device that displays information in pictorial form?
+            </h3>
+            <p>
+              <input type="radio" name="question9" class="inputRadio9" id="inputRadio33" value="A" radio9 />
+              A) Image
+            </p>
+            <p>
+              <input type="radio" name="question9" class="inputRadio9" id="inputRadio34" value="B" radio9 />
+              B) Monitor
+            </p>
+            <p>
+              <input type="radio" name="question9" class="inputRadio9" id="inputRadio35" value="C" radio9 />
+              C) BIOS
+            </p>
+            <p>
+              <input type="radio" name="question9" class="inputRadio9" id="inputRadio36" value="D" radio9 />
+              D) Video card
+            </p>
+          </div>
+          <!-- Number 10 -->
+          <div class="container-1">
+            <span id="answerMessage10" answerMessage10></span>
+            <span id="emptyMessage10"></span>
+            <h3 id="questionNumber10">
+              10) It is a device used to put energy into a secondary cell or rechargeable battery by forcing an
+              electric
+              current through it.
+            </h3>
+            <p>
+              <input type="radio" name="question10" class="inputRadio10" id="inputRadio37" value="A" radio10 />
+              A) Generator
+            </p>
+            <p>
+              <input type="radio" name="question10" class="inputRadio10" id="inputRadio38" value="B" radio10 />
+              B) Powerbank
+            </p>
+            <p>
+              <input type="radio" name="question10" class="inputRadio10" id="inputRadio39" value="C" radio10 />
+              C) Power Supply Unit
+            </p>
+            <p>
+              <input type="radio" name="question10" class="inputRadio10" id="inputRadio40" value="D" radio10 />
+              D) Charger
+            </p>
+          </div>
+        </div>
 
-              <!-- Number 4 -->
-              <div class="sameDiv div4">
-                <span id="span4"></span>
-                <h3 id="question4">4) 12 / 3 = ?</h3>
-                <input type="number" id="answer4" placeholder="answer" required />
-                <div id="answerDiv4"></div>
-              </div>
+        <!-- Third -->
+        <!-- Number 11 -->
+        <div class="box-1">
+          <div class="container-1">
+            <span id="answerMessage11" answerMessage11></span>
+            <span id="emptyMessage11"></span>
+            <h3 id="questionNumber11">
+              11) A _______ is a typewriter-style device which uses an arrangement of buttons or keys to act as
+              mechanical
+              levers or electronic switches.
+            </h3>
+            <p>
+              <input type="radio" name="question11" class="inputRadio11" id="inputRadio41" value="A" radio11 />
+              A) Telephone keypad
+            </p>
+            <p>
+              <input type="radio" name="question11" class="inputRadio11" id="inputRadio42" value="B" radio11 />
+              B) Virtual keyboard
+            </p>
+            <p>
+              <input type="radio" name="question11" class="inputRadio11" id="inputRadio43" value="C" radio11 />
+              C) Computer keyboard
+            </p>
+            <p>
+              <input type="radio" name="question11" class="inputRadio11" id="inputRadio44" value="D" radio11 />
+              D) All of the above
+            </p>
+          </div>
+          <!-- Number 12 -->
+          <div class="container-1">
+            <span id="answerMessage12" answerMessage12></span>
+            <span id="emptyMessage12"></span>
+            <h3 id="questionNumber12">
+              12) What is the pack is a rechargeable battery pack with a built-in battery management system (BMS),
+              usually designed for use in a
+              portable computer such as a laptop?
+            </h3>
+            <p>
+              <input type="radio" name="question12" class="inputRadio12" id="inputRadio45" value="A" radio12 />
+              A) Smart battery
+            </p>
+            <p>
+              <input type="radio" name="question12" class="inputRadio12" id="inputRadio46" value="B" radio12 />
+              B) Nickel-cadmium battery
+            </p>
+            <p>
+              <input type="radio" name="question12" class="inputRadio12" id="inputRadio47" value="C" radio12 />
+              C) Lithium-ion battery
+            </p>
+            <p>
+              <input type="radio" name="question12" class="inputRadio12" id="inputRadio48" value="D" radio12 />
+              D) Nickel–metal hydride battery
+            </p>
+          </div>
+          <!-- Number 13 -->
+          <div class="container-1">
+            <span id="answerMessage13" answerMessage13></span>
+            <span id="emptyMessage13"></span>
+            <h3 id="questionNumber13">
+              13) It is a keyboard built with spring activated key switches.
+            </h3>
+            <p>
+              <input type="radio" name="question13" class="inputRadio13" id="inputRadio49" value="A" radio13 />
+              A) Mechanical keyboard
+            </p>
+            <p>
+              <input type="radio" name="question13" class="inputRadio13" id="inputRadio50" value="B" radio13 />
+              B) Membrane Keyboards
+            </p>
+            <p>
+              <input type="radio" name="question13" class="inputRadio13" id="inputRadio51" value="C" radio13 />
+              C) Flexible Keyboards
+            </p>
+            <p>
+              <input type="radio" name="question13" class="inputRadio13" id="inputRadio52" value="D" radio13 />
+              D) Ergonomic Keyboards
+            </p>
+          </div>
+          <!-- Number 14 -->
+          <div class="container-1">
+            <span id="answerMessage14" answerMessage14></span>
+            <span id="emptyMessage14"></span>
+            <h3 id="questionNumber14">
+              14) He is the inventor of computer mouse.
+            </h3>
+            <p>
+              <input type="radio" name="question14" class="inputRadio14" id="inputRadio53" value="A" radio14 />
+              A) Linus Torvalds
+            </p>
+            <p>
+              <input type="radio" name="question14" class="inputRadio14" id="inputRadio54" value="B" radio14 />
+              B) Douglas Engelbart
+            </p>
+            <p>
+              <input type="radio" name="question14" class="inputRadio14" id="inputRadio55" value="C" radio14 />
+              C) Christopher Latham Sholes
+            </p>
+            <p>
+              <input type="radio" name="question14" class="inputRadio14" id="inputRadio56" value="D" radio14 />
+              D) Charles Babbage
+            </p>
+          </div>
+          <!-- Number 15 -->
+          <div class="container-1">
+            <span id="answerMessage15" answerMessage15></span>
+            <span id="emptyMessage15"></span>
+            <h3 id="questionNumber15">
+              15) What year invented the laptop?
+            </h3>
+            <p>
+              <input type="radio" name="question15" class="inputRadio15" id="inputRadio57" value="A" radio15 />
+              A) 1974
+            </p>
+            <p>
+              <input type="radio" name="question15" class="inputRadio15" id="inputRadio58" value="B" radio15 />
+              B) 1983
+            </p>
+            <p>
+              <input type="radio" name="question15" class="inputRadio15" d="inputRadio59" value="C" radio15 />
+              C) 1960
+            </p>
+            <p>
+              <input type="radio" name="question15" class="inputRadio15" id="inputRadio60" value="D" radio15 />
+              D) 1984
+            </p>
+          </div>
+          <input type="submit" value="Submit" id="submit">
+        </div>
+      </div>
+    </div>
+  </form>
 
-              <!-- Number 5 -->
-              <div class="sameDiv div5">
-                <span id="span5"></span>
-                <h3 id="question5">5) 4 % 3 = ?</h3>
-                <input type="number" id="answer5" placeholder="answer" required />
-                <div id="answerDiv5"></div>
-              </div>
+  <!-- Stage 2 -->
+
+  <!-- 1 to 5 -->
+
+  <!-- Number 1 -->
+  <div class="stage-2-div">
+    <div class="title-div">
+      <h1>Stage 2</h1>
+    </div>
+    <div class="box-2">
+      <div class="stage-2">
+        <div class="box-2">
+          <div class="container-2">
+            <!-- Number 1 -->
+            <div class="sameDiv div1">
+              <span id="span1"></span>
+              <h3 id="question1">1) 2 + 2 = ?</h3>
+              <input type="number" id="answer1" placeholder="answer" required />
+              <div id="answerDiv1"></div>
+            </div>
+
+            <!-- Number 2 -->
+            <div class="sameDiv div2">
+              <span id="span2"></span>
+              <h3 id="question2">2) 10 x 3 = ?</h3>
+              <input type="number" id="answer2" placeholder="answer" required />
+              <div id="answerDiv2"></div>
+            </div>
+
+            <!-- Number 3 -->
+            <div class="sameDiv div3">
+              <span id="span3"></span>
+              <h3 id="question3">3) 15 - 4 = ?</h3>
+              <input type="number" id="answer3" placeholder="answer" required />
+              <div id="answerDiv3"></div>
+            </div>
+
+            <!-- Number 4 -->
+            <div class="sameDiv div4">
+              <span id="span4"></span>
+              <h3 id="question4">4) 12 / 3 = ?</h3>
+              <input type="number" id="answer4" placeholder="answer" required />
+              <div id="answerDiv4"></div>
+            </div>
+
+            <!-- Number 5 -->
+            <div class="sameDiv div5">
+              <span id="span5"></span>
+              <h3 id="question5">5) 4 % 3 = ?</h3>
+              <input type="number" id="answer5" placeholder="answer" required />
+              <div id="answerDiv5"></div>
             </div>
           </div>
+        </div>
 
-          <!-- 6 to 10 -->
+        <!-- 6 to 10 -->
 
-          <div class="box-2">
-            <div class="container-2">
-              <!-- Number 6 -->
-              <div class="sameDiv div6">
-                <span id="span6"></span>
-                <h3 id="question6">6) 2 + 2 = ?</h3>
-                <input type="number" id="answer6" placeholder="answer" required />
-                <div id="answerDiv6"></div>
-              </div>
+        <div class="box-2">
+          <div class="container-2">
+            <!-- Number 6 -->
+            <div class="sameDiv div6">
+              <span id="span6"></span>
+              <h3 id="question6">6) 2 + 2 = ?</h3>
+              <input type="number" id="answer6" placeholder="answer" required />
+              <div id="answerDiv6"></div>
+            </div>
 
-              <!-- Number 7 -->
-              <div class="sameDiv div7">
-                <span id="span7"></span>
-                <h3 id="question7">7) 10 x 3 = ?</h3>
-                <input type="number" id="answer7" placeholder="answer" required />
-                <div id="answerDiv7"></div>
-              </div>
+            <!-- Number 7 -->
+            <div class="sameDiv div7">
+              <span id="span7"></span>
+              <h3 id="question7">7) 10 x 3 = ?</h3>
+              <input type="number" id="answer7" placeholder="answer" required />
+              <div id="answerDiv7"></div>
+            </div>
 
-              <!-- Number 8 -->
-              <div class="sameDiv div8">
-                <span id="span8"></span>
-                <h3 id="question8">8) 15 - 4 = ?</h3>
-                <input type="number" id="answer8" placeholder="answer" required />
-                <div id="answerDiv8"></div>
-              </div>
+            <!-- Number 8 -->
+            <div class="sameDiv div8">
+              <span id="span8"></span>
+              <h3 id="question8">8) 15 - 4 = ?</h3>
+              <input type="number" id="answer8" placeholder="answer" required />
+              <div id="answerDiv8"></div>
+            </div>
 
-              <!-- Number 9 -->
-              <div class="sameDiv div9">
-                <span id="span9"></span>
-                <h3 id="question9">9) 12 / 3 = ?</h3>
-                <input type="number" id="answer9" placeholder="answer" required />
-                <div id="answerDiv9"></div>
-              </div>
+            <!-- Number 9 -->
+            <div class="sameDiv div9">
+              <span id="span9"></span>
+              <h3 id="question9">9) 12 / 3 = ?</h3>
+              <input type="number" id="answer9" placeholder="answer" required />
+              <div id="answerDiv9"></div>
+            </div>
 
-              <!-- Number 10 -->
-              <div class="sameDiv div10">
-                <span id="span10"></span>
-                <h3 id="question10">10) 4 % 3 = ?</h3>
-                <input type="number" id="answer10" placeholder="answer" required />
-                <div id="answerDiv10"></div>
-              </div>
+            <!-- Number 10 -->
+            <div class="sameDiv div10">
+              <span id="span10"></span>
+              <h3 id="question10">10) 4 % 3 = ?</h3>
+              <input type="number" id="answer10" placeholder="answer" required />
+              <div id="answerDiv10"></div>
             </div>
           </div>
+        </div>
 
-          <!-- 11 to 15 -->
+        <!-- 11 to 15 -->
 
-          <div class="box-2">
-            <div class="container-2">
-              <!-- Number 11 -->
-              <div class="sameDiv div11">
-                <span id="span11"></span>
-                <h3 id="question11">11) 2 + 2 = ?</h3>
-                <input type="number" id="answer11" placeholder="answer" required />
-                <div id="answerDiv11"></div>
-              </div>
+        <div class="box-2">
+          <div class="container-2">
+            <!-- Number 11 -->
+            <div class="sameDiv div11">
+              <span id="span11"></span>
+              <h3 id="question11">11) 2 + 2 = ?</h3>
+              <input type="number" id="answer11" placeholder="answer" required />
+              <div id="answerDiv11"></div>
+            </div>
 
-              <!-- Number 12 -->
-              <div class="sameDiv div12">
-                <span id="span12"></span>
-                <h3 id="question12">12) 10 x 3 = ?</h3>
-                <input type="number" id="answer12" placeholder="answer" required />
-                <div id="answerDiv12"></div>
-              </div>
+            <!-- Number 12 -->
+            <div class="sameDiv div12">
+              <span id="span12"></span>
+              <h3 id="question12">12) 10 x 3 = ?</h3>
+              <input type="number" id="answer12" placeholder="answer" required />
+              <div id="answerDiv12"></div>
+            </div>
 
-              <!-- Number 13 -->
-              <div class="sameDiv div13">
-                <span id="span13"></span>
-                <h3 id="question13">13) 15 - 4 = ?</h3>
-                <input type="number" id="answer13" placeholder="answer" required />
-                <div id="answerDiv13"></div>
-              </div>
+            <!-- Number 13 -->
+            <div class="sameDiv div13">
+              <span id="span13"></span>
+              <h3 id="question13">13) 15 - 4 = ?</h3>
+              <input type="number" id="answer13" placeholder="answer" required />
+              <div id="answerDiv13"></div>
+            </div>
 
-              <!-- Number 14 -->
-              <div class="sameDiv div14">
-                <span id="span14"></span>
-                <h3 id="question14">14) 12 / 3 = ?</h3>
-                <input type="number" id="answer14" placeholder="answer" required />
-                <div id="answerDiv14"></div>
-              </div>
+            <!-- Number 14 -->
+            <div class="sameDiv div14">
+              <span id="span14"></span>
+              <h3 id="question14">14) 12 / 3 = ?</h3>
+              <input type="number" id="answer14" placeholder="answer" required />
+              <div id="answerDiv14"></div>
+            </div>
 
-              <!-- Number 15 -->
-              <div class="sameDiv div15">
-                <span id="span15"></span>
-                <h3 id="question15">15) 4 % 3 = ?</h3>
-                <input type="number" id="answer15" placeholder="answer" required />
-                <div id="answerDiv15"></div>
-              </div>
+            <!-- Number 15 -->
+            <div class="sameDiv div15">
+              <span id="span15"></span>
+              <h3 id="question15">15) 4 % 3 = ?</h3>
+              <input type="number" id="answer15" placeholder="answer" required />
+              <div id="answerDiv15"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Result output -->
+  </div>
+  <!-- Result output -->
 
-    <div class="pass-container" id="pass-container">
-      <h2></h2>
-      <div class="pass-message">
-        <p id="question"></p>
-        <div class="buttons">
-          <div>
-            <button id="buttonBack">Back</button>
-          </div>
-          <div>
-            <button id="buttonRetake">Retake</button>
-          </div>
-          <form action="/secondMath.html">
-            <button id="buttonContinue">Continue</button>
-          </form>
+  <div class="pass-container" id="pass-container">
+    <h2></h2>
+    <div class="pass-message">
+      <p id="question"></p>
+      <div class="buttons">
+        <div>
+          <button id="buttonBack">Back</button>
         </div>
-      </div>
-      <div class="resultDiv">
-        <div id="correctDiv" class="countDiv"></div>
-        <div id="mistakeDiv" class="countDiv"></div>
-        <div id="blankDiv"></div>
+        <div>
+          <button id="buttonRetake">Retake</button>
+        </div>
+        <form action="/secondMath.html">
+          <button id="buttonContinue">Continue</button>
+        </form>
       </div>
     </div>
+    <div class="resultDiv">
+      <div id="correctDiv" class="countDiv"></div>
+      <div id="mistakeDiv" class="countDiv"></div>
+      <div id="blankDiv"></div>
     </div>
+  </div>
+  </div>
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
 
 </html>

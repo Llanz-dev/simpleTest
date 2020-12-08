@@ -190,6 +190,22 @@ input[type="number"]:focus {
   font-weight: 100;
 }
 
+@media only screen and (min-width: 1000px) {
+  .stage-2 {
+    margin: 2rem 0;
+    height: 70vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+    align-items: none;
+    width: 100%;
+  }
+  .container-2 {
+    border: 1px solid black;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .container-1 h3 {
     font-size: 16px;
@@ -208,18 +224,20 @@ input[type="number"]:focus {
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  .stage-2 {
-    margin: 2rem 0;
-    height: 70vh;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    border: none;
-    align-items: none;
-    width: 100%;
+@media only screen and (max-width: 450px) {
+  .container-1 h3 {
+    font-size: 14.5px;
   }
-  .container-2 {
-    border: 1px solid black;
+  .container-1 p {
+    font-size: 12.5px;
+  }
+  .container-2 h3 {
+    font-size: 1.1em;
+  }
+  input[type="number"] {
+    font-size: 0.95rem;
+  }
+  span {
+    font-size: 12.5px;
   }
 }

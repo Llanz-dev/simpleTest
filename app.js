@@ -1,9 +1,7 @@
 const load = document.getElementById("loader");
 let number, state, userAnswer, answerKey, totalClick, set;
-let countMistake1 = 0,
-  countMistake2 = 0;
-let countCorrect1 = 0,
-  countCorrect2 = 0;
+let countMistake = 0;
+countCorrect = 0;
 let buttonBack = document.getElementById("buttonBack");
 let buttonRetake = document.getElementById("buttonRetake");
 let buttonContinue = document.getElementById("buttonContinue");
@@ -87,8 +85,9 @@ document.querySelectorAll("[radio" + number + "]").forEach((cell) => {
 function answerCheck(questAnswer, answerKey, number) {
   // This is the code if the user did not filled out the the questions
   if (questAnswer == "") {
-    countCorrect1 = 0;
-    countMistake1 = 0;
+    countCorrect = 0;
+    countMistake = 0;
+    alert("Please answer all the questions");
     document.getElementById("emptyMessage" + number).textContent =
       "Please filled out your answer on number " + number;
     document.getElementById("emptyMessage" + number).style.color = "yellow";
@@ -101,8 +100,8 @@ function answerCheck(questAnswer, answerKey, number) {
   } else if (questAnswer == answerKey) {
     document.getElementById("answerMessage" + number).textContent =
       answerKey + " is CORRECT";
-    document.getElementById("answerMessage" + number).style.color = "green";
-    countCorrect1++;
+    document.getElementById("answerMessage" + number).classList.add("green");
+    countCorrect++;
     document.querySelectorAll("[radio" + number + "]").forEach((radios) => {
       radios.disabled = true;
     });
@@ -111,13 +110,13 @@ function answerCheck(questAnswer, answerKey, number) {
   } else {
     document.getElementById("answerMessage" + number).textContent =
       questAnswer + " is WRONG";
-    document.getElementById("answerMessage" + number).style.color = "red";
-    countMistake1++;
+    document.getElementById("answerMessage" + number).classList.add("red");
+    countMistake++;
     document.querySelectorAll("[radio" + number + "]").forEach((radios) => {
       radios.disabled = true;
     });
   }
-  totalClick = countMistake1 + countCorrect1;
+  totalClick = countMistake + countCorrect;
   if (totalClick == 15) {
     Scoring();
   }
@@ -207,16 +206,18 @@ function questAnswer() {
 function Scoring() {
   submitButton.disabled = true;
   submitButton.style.cursor = "not-allowed";
-  console.log("Correct " + countCorrect1);
-  console.log("Wrong " + countMistake1);
+  console.log("Correct " + countCorrect);
+  console.log("Wrong " + countMistake);
   // Showing the output if the user pass the test in stage 2
-  if (countCorrect1 > 9) {
+  if (countCorrect > 9) {
+    alert("You Passed");
     console.log("You passed");
     input1.disabled = false;
     input1.classList.add("txtCursor");
 
     // Showing the output if the user failed the test in stage 2
   } else {
+    alert("You failed");
     console.log("You failed");
   }
 }
@@ -246,12 +247,12 @@ buttonRetake.addEventListener("click", function () {
 // Function if the answer is correct
 function correctAnswer(text, input, p, userAnswer) {
   text = document.createTextNode(userAnswer + " is correct");
-  input.style.border = "1px solid green";
-  p.style.color = "green";
+  input.style.border = "1px solid rgb(0, 255, 0)";
+  p.style.color = "rgb(0, 255, 0)";
   p.appendChild(text);
   input.disabled = true;
   checkCursor(input);
-  countCorrect2++;
+  countCorrect++;
 }
 
 // Function if the answer is wrong
@@ -262,7 +263,7 @@ function wrongAnswer(text, input, p, userAnswer) {
   p.appendChild(text);
   input.disabled = true;
   checkCursor(input);
-  countMistake2++;
+  countMistake++;
 }
 
 // Function if what is the judgement of your answer
@@ -281,6 +282,7 @@ function testAnswer(userAnswer, answerKey, text, input, p, number) {
     input.disabled = false;
     document.getElementById("span" + number).innerHTML =
       "Please filled out your answer";
+    document.getElementById("span" + number).style.color = "yellow";
     state = "not";
   }
   // Function if the user did not answer the test
@@ -546,8 +548,8 @@ function testLogic() {
         document.getElementById("answerDiv15").appendChild(p15);
 
         // After the test
-        const correct = "Number of correct: " + countCorrect2;
-        const mistake = "Number of mistake: " + countMistake2;
+        const correct = "Number of correct: " + countCorrect;
+        const mistake = "Number of mistake: " + countMistake;
         const correctCount = document.createElement("h1");
         const mistakeCount = document.createElement("h1");
         const textCorrect = document.createTextNode(correct);
@@ -559,7 +561,7 @@ function testLogic() {
         passContainer.style.display = "flex";
 
         // Showing the output if the user pass the test in stage 2
-        if (countCorrect2 > 9) {
+        if (countCorrect > 19) {
           h2.classList.add("green");
           h2.innerHTML = "You passed the test!";
           question.innerText = "Do you want to continue?";
